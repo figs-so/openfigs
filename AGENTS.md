@@ -24,6 +24,11 @@ inside a block composes its guide with every ancestor block's above it — no wi
 is just the topmost block**, so its `AGENTS.md` is inherited by all (that's why it holds the
 fleet-wide rules). (`CLAUDE.md` symlinks `AGENTS.md` at every level, so Claude Code composes identically.)
 
+**Keep nesting shallow.** Each level stacks another inherited `AGENTS.md` into a block's
+context, so deep trees bloat and confuse it. Root + (optionally) a department + the agent —
+**2–3 levels** — is plenty; nesting deeper usually means you want a flatter set of focused
+agents instead.
+
 **At the root, your job is to steward the fleet and recruit.** When you work at the repo root —
 not inside an agent — keep the roster + fleet rules current and create new agents with the
 **`recruit`** skill. Everything else in this file is the shared floor every agent inherits.
