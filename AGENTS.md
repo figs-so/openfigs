@@ -25,7 +25,8 @@ that agent's guide with this shared root above it — no wiring. (`CLAUDE.md` is
 
 **Keep agents small and focused — one agent, one job.** A good agent has a single clear scope;
 it doesn't sprawl into a do-everything assistant. When a new, distinct job appears, **spin up a
-new dedicated agent** rather than bolting it onto an existing one. Many small, goal-specific
+new dedicated agent** (the **`recruit`** skill walks you through it — good-agent criteria, when
+to split, how to onboard) rather than bolting it onto an existing one. Many small, goal-specific
 employees beat one big vague one.
 
 ## Operating philosophy
@@ -125,5 +126,6 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `README.md` — what OpenFigs is + how to use it
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
+- `.agents/skills/recruit/SKILL.md` — how to create a new agent right (good-agent criteria, when to split)
 - `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
 - `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/`
