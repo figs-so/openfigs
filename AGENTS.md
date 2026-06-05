@@ -120,15 +120,19 @@ You write only the **body**, using the classes in `lib/report.css` (`.topbar` ·
 CSS** — if you need a new component, add it to `lib/report.css`. Lead with the answer; keep it
 skimmable (TLDR + charts). Aggregates / IDs only — no raw user content.
 
-## Capability doors
+## Gateways (your connection to other systems)
 
-You reach an external system (a database, an API, a portal) **only through a capability door**
-in `lib/doors/` — never with ad-hoc connections scattered through your code. A door is:
+Treat yourself as a **system.** When you reach another system — a database, an API, a portal —
+do it through a **gateway** in your own `gateways/` folder, never with ad-hoc connections
+scattered through your code. A gateway is:
 - **one swappable entry per system** — easy to audit, mock, and replace;
-- **key-from-environment** — it reads its credentials from env vars (see `.env.example`);
-  **keys are NEVER embedded in agent files or committed.**
+- **key-from-environment** — it reads credentials from this agent's `.env` (see `.env.example`);
+  **keys are NEVER embedded in code or committed.**
 
-See `lib/doors/example.mjs` for the shape; copy it to `lib/doors/<system>.mjs` and adapt.
+**Gateways are per-agent, not shared.** Each agent owns (and may duplicate) its own gateway
+code — a shared gateway that "improves" while serving agent A can silently break agent B, and
+**stability beats DRY** for logic an agent depends on. (Stable infra like the report helper is
+fine to share; connection/business logic is not.) Copy `gateways/example.mjs` and adapt.
 
 ## Safety perimeter
 
@@ -152,7 +156,7 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
-- `lib/doors/` — capability doors (one swappable, env-keyed entry per external system; see `.env.example`)
+  (the only shared *code* — everything else, e.g. gateways, each agent owns)
 - `.agents/skills/recruit/SKILL.md` — how to create a new agent right (good-agent criteria, when to split)
 - `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
 - `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/`

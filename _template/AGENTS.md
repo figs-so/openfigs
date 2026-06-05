@@ -29,9 +29,10 @@ Read the root first, then this.
 - `MEMORY.md` — my durable working memory
 - `SANITY.md` — my checkable invariants (the `self-audit` skill checks these)
 - `reports/` — one HTML report per job
+- `gateways/` — my connections to other systems (one swappable gateway per system; keys in `.env`)
 - `.agents/skills/` — my own skills (drop a `<name>/SKILL.md` here; the `.claude/skills`
   symlink makes Claude Code see it too)
-- <add others as you create them: `queries/`, `scripts/`, `memory/`>
+- <add others as you create them, keeping the agent root tidy: `scripts/`, `docs/`, `references/`, `memory/`>
 
 ## My safety perimeter (human-owned)
 
