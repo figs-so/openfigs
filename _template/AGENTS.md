@@ -29,7 +29,7 @@ Read the root first, then this.
 - `MEMORY.md` — my durable working memory
 - `SANITY.md` — my checkable invariants (the `self-audit` skill checks these)
 - `reports/` — one HTML report per job
-- `gateways/` — my connections to other systems (one swappable gateway per system; keys in `.env`)
+- `gateways/` — my own connectors for systems **without** a shared service (else use a `/services` service); keys in `.env`
 - `scripts/` · `docs/` · `references/` — keep my code, docs, and reference material here (not loose at my root)
 - `.agents/skills/` — my own skills (drop a `<name>/SKILL.md` here; `.claude/skills` mirrors it for Claude Code)
 

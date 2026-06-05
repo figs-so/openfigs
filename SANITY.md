@@ -14,4 +14,5 @@ skill runs these for each agent, plus that agent's own `SANITY.md`.
 - [ ] no secrets or raw user content committed
 - [ ] **tidy block** — files are in the right folder (scripts in `scripts/`, docs in `docs/`,
       references in `references/`, gateways in `gateways/`); no stray loose files at a block root
+- [ ] shared services (`services/*`) have a passing test (`node --test`)
 - [ ] the roster (root `AGENTS.md` / `MEMORY.md`) matches the agents that actually exist

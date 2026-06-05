@@ -125,19 +125,21 @@ You write only the **body**, using the classes in `lib/report.css` (`.topbar` ·
 CSS** — if you need a new component, add it to `lib/report.css`. Lead with the answer; keep it
 skimmable (TLDR + charts). Aggregates / IDs only — no raw user content.
 
-## Gateways (your connection to other systems)
+## Services & gateways (reaching other systems)
 
-Treat yourself as a **system.** When you reach another system — a database, an API, a portal —
-do it through a **gateway** in your own `gateways/` folder, never with ad-hoc connections
-scattered through your code. A gateway is:
-- **one swappable entry per system** — easy to audit, mock, and replace;
-- **key-from-environment** — it reads credentials from this agent's `.env` (see `.env.example`);
-  **keys are NEVER embedded in code or committed.**
+Treat yourself as a **system.** You reach another system only through a thin, swappable entry —
+never ad-hoc connections scattered through your code — with **keys from the environment, never
+embedded.** Two tiers:
 
-**Gateways are per-agent, not shared.** Each agent owns (and may duplicate) its own gateway
-code — a shared gateway that "improves" while serving agent A can silently break agent B, and
-**stability beats DRY** for logic an agent depends on. (Stable infra like the report helper is
-fine to share; connection/business logic is not.) Copy `gateways/example.mjs` and adapt.
+- **Services** (`services/`) — the **shared** connector library: thin, stable, **tested**
+  connectors to systems many agents reuse (a DB, Slack, Snowflake, SAP…). **Use a service when
+  one exists.** This is the reusable layer the community grows — see `services/README.md`.
+- **Gateways** (`gateways/`, per-agent) — your **own** connector for a system that has no
+  service, or a thin wrapper that uses a service and adds your logic. Per-agent, so improving
+  yours never breaks another agent.
+
+Both are **real, tested code** (sanity + a test). **Shared services must have tests** — many
+agents depend on them; keep services **thin** (connection only) so they stay stable.
 
 ## Safety perimeter
 
@@ -162,7 +164,8 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `MEMORY.md` · `SANITY.md` (root) — the fleet steward's memory + the fleet floor (global checks)
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
-  (the only shared *code* — everything else, e.g. gateways, each agent owns)
+- `services/` — the shared connector library (thin, tested services many agents reuse; the
+  community expansion surface — see `services/README.md`)
 - `.agents/skills/recruit/SKILL.md` — how to create a new agent right (good-agent criteria, when to split)
 - `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
 - `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/`
