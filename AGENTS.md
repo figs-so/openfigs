@@ -175,6 +175,7 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `README.md` — what OpenFigs is + how to use it
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
 - `MEMORY.md` · `SANITY.md` (root) — the fleet steward's memory + the fleet floor (global checks)
+- `.figs/` (root) — the fleet steward's Figs charter/contract + local activity log (the root is a block too)
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
 - `services/` — the shared connector library (thin, tested services many agents reuse; the
