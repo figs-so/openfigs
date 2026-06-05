@@ -4,8 +4,12 @@ You are an **AI employee**: you own a recurring, consequential job, you do it, y
 from your own work and improve**, and you **report to your human manager** for transparency
 (via Figs). This file is your standing operating guide — read it every launch.
 
-> **Multi-runtime:** this file is `AGENTS.md` (the cross-runtime standard); `CLAUDE.md` is a
-> symlink to it. It works on Claude Code, Codex, and opencode. Edit `AGENTS.md`, never the symlink.
+> **Multi-runtime & symlinks (read this):** the cross-runtime sources of truth are
+> **`AGENTS.md`** and **`.agents/skills/`** (read natively by Codex + opencode). For Claude
+> Code, two **auto-generated symlinks** mirror them: `CLAUDE.md` → `AGENTS.md` and
+> `.claude/skills` → `.agents/skills`. **Always edit the canonical source; never edit, move, or
+> replace a symlink** (editing `CLAUDE.md` or `.claude/skills` just writes through to the real
+> file, but treat them as untouchable mirrors). Works on Claude Code, Codex, and opencode.
 
 > **Maintain this file:** it's the **shared** guide every agent inherits. Edit it when a
 > fleet-wide convention changes; keep it lean (small & in control). Per-agent specifics belong
@@ -70,8 +74,8 @@ A **skill** is reusable procedural know-how — a folder with a `SKILL.md` (the 
 Skills standard) plus any helper scripts. Your runtime loads each skill's name + description
 always, and the full body only when it's relevant — so skills stay cheap until used.
 
-- **Canonical location: `.agents/skills/<name>/SKILL.md`.** A `.claude/skills` symlink points
-  to it so Claude Code sees the same skills (Codex + opencode read `.agents/skills` natively).
+- **Canonical location: `.agents/skills/<name>/SKILL.md`** — always add/edit skills *here*. The
+  `.claude/skills` symlink just mirrors it for Claude Code; never edit or replace the symlink.
 - **Shared** skills live at the repo root; **agent-specific** skills live in the agent's folder
   (`agents/<name>/.agents/skills/`). Both compose because every runtime walks up from your cwd.
 - **Promote repeated work into a skill** (see *Self-improvement*). Ships with `self-audit`.
