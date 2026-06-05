@@ -28,10 +28,14 @@ If the new agent shares context with existing ones (e.g. several finance agents 
 customers/conventions), put the shared knowledge where directory composition delivers it —
 never copy-paste the same facts into two agents:
 - **Instruction-like** shared rules → a **parent folder's `AGENTS.md`** both inherit (nest them,
-  e.g. `agents/finance/<agent>/`). Only do this once the sharing is *real* — don't pre-build a
-  department/manager (that emerges bottom-up).
-- **Reference** knowledge (loaded on demand) → a shared file + a **pointer** from each agent's
-  `AGENTS.md` ("for X, see `../shared/X.md`").
+  e.g. `agents/finance/<agent>/`). This is **automatic** — opening an agent in its own dir
+  auto-loads the parent guide up the tree, so no pointer is needed. Only do this once the
+  sharing is *real* — don't pre-build a department/manager (that emerges bottom-up).
+- **Reference** knowledge, too bulky for the parent guide → a shared file (e.g.
+  `<parent>/shared/<x>.md`) + a **pointer** from each agent's own `AGENTS.md` ("for X, see
+  `../shared/X.md`"). The pointer lives in the agent's own guide (which it reads first), so it
+  doesn't matter that the shared file sits a level up — the agent *follows* the pointer, it
+  never has to *find* it.
 
 ## 4. Scaffold + onboard
 1. `node scripts/new-agent.mjs <name>`  (or `<dept>/<name>` to nest under a shared parent).
