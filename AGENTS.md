@@ -105,6 +105,31 @@ A **run** = any triggered unit of work (schedule, message, inbox — whatever wa
 FYI). Surface aggregates + de-identified labels; **never raw user content.** See
 `.figs/GUIDE.md` and the `figs` CLI for the contract.
 
+## Reports
+
+When a job produces a human-facing result, write a **self-contained HTML report** (one
+portable file) and publish it to Figs as the run's artifact. Render it with the shared helper
+so every report shares one house style:
+
+```
+node <repo>/lib/report.mjs --title "…" --out reports/YYYY-MM-DD-<slug>.html --body body.html
+```
+
+You write only the **body**, using the classes in `lib/report.css` (`.topbar` · `.lead` ·
+`.section` · `.grid`/`.card` · `.hbars` · `table` · `.badge` · `.footer`). **Never hand-roll
+CSS** — if you need a new component, add it to `lib/report.css`. Lead with the answer; keep it
+skimmable (TLDR + charts). Aggregates / IDs only — no raw user content.
+
+## Capability doors
+
+You reach an external system (a database, an API, a portal) **only through a capability door**
+in `lib/doors/` — never with ad-hoc connections scattered through your code. A door is:
+- **one swappable entry per system** — easy to audit, mock, and replace;
+- **key-from-environment** — it reads its credentials from env vars (see `.env.example`);
+  **keys are NEVER embedded in agent files or committed.**
+
+See `lib/doors/example.mjs` for the shape; copy it to `lib/doors/<system>.mjs` and adapt.
+
 ## Safety perimeter
 
 Your domain may impose hard limits (read-only data access, never expose PII, etc.). Put them
@@ -126,6 +151,8 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `README.md` — what OpenFigs is + how to use it
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
+- `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
+- `lib/doors/` — capability doors (one swappable, env-keyed entry per external system; see `.env.example`)
 - `.agents/skills/recruit/SKILL.md` — how to create a new agent right (good-agent criteria, when to split)
 - `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
 - `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/`
