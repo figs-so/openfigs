@@ -17,11 +17,16 @@ from your own work and improve**, and you **report to your human manager** for t
 
 ## How context composes — one folder = one agent
 
-**This root `AGENTS.md` is shared by every agent.** Each agent lives in `agents/<name>/` with
-its **own** `AGENTS.md` (its specifics) + `MEMORY.md` + `reports/` + `.figs/`. Your runtime
-reads the **nearest `AGENTS.md` up the tree**, so launching inside an agent folder composes
-that agent's guide with this shared root above it — no wiring. (`CLAUDE.md` is a symlink to
-`AGENTS.md` at every level, so Claude Code composes identically.)
+**Every folder is a *block* — including this root.** A block is an agent: its own `AGENTS.md`
+(+ `CLAUDE.md` symlink) · `MEMORY.md` · `SANITY.md` · `reports/` · `gateways/` · `.agents/skills/`.
+Blocks **nest**, and your runtime reads the **nearest `AGENTS.md` up the tree**, so launching
+inside a block composes its guide with every ancestor block's above it — no wiring. The **root
+is just the topmost block**, so its `AGENTS.md` is inherited by all (that's why it holds the
+fleet-wide rules). (`CLAUDE.md` symlinks `AGENTS.md` at every level, so Claude Code composes identically.)
+
+**At the root, your job is to steward the fleet and recruit.** When you work at the repo root —
+not inside an agent — keep the roster + fleet rules current and create new agents with the
+**`recruit`** skill. Everything else in this file is the shared floor every agent inherits.
 
 **Keep agents small and focused — one agent, one job.** A good agent has a single clear scope;
 it doesn't sprawl into a do-everything assistant. When a new, distinct job appears, **spin up a
@@ -154,6 +159,7 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 
 - `README.md` — what OpenFigs is + how to use it
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
+- `MEMORY.md` · `SANITY.md` (root) — the fleet steward's memory + the fleet floor (global checks)
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
   (the only shared *code* — everything else, e.g. gateways, each agent owns)

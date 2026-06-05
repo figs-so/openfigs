@@ -11,19 +11,16 @@ up / audit." This is what keeps a self-improving agent from rotting as it edits 
 code, and docs over many runs.
 
 ## Procedure
-1. **Scope it** — one agent (the agent folder you're in) or the whole repo.
-2. **Global rules** (every agent):
-   - every doc carries a "**Maintain:**" note;
-   - every doc is listed in its nearest `AGENTS.md` index;
-   - no secrets or raw user content are committed;
-   - symlinks intact: each `CLAUDE.md` → `AGENTS.md`, and `.claude/skills` → `.agents/skills`.
-3. **Agent invariants** — run the checks in the agent's `SANITY.md`.
-4. **Fix vs flag** — fix the safe, obvious things (add a missing Maintain note, add a missing
-   index line, tidy a stray file). Anything judgment-laden or risky: **don't auto-fix — flag it.**
-5. **Track it** — append one line per audit to the agent's history (`.figs/runs.jsonl` or a
+1. **Scope it** — one block (the agent folder you're in) or the whole repo.
+2. **Run the checks** — the **fleet floor** in the root `SANITY.md` (applies to every block) +
+   this block's own `SANITY.md`.
+3. **Fix vs flag** — fix the safe, obvious things (add a missing Maintain note, add a missing
+   index line, move a stray file into its folder). Anything judgment-laden or risky:
+   **don't auto-fix — flag it.**
+4. **Track it** — append one line per audit to the block's history (`.figs/runs.jsonl` or a
    dedicated `audit-log.jsonl`): date · checks run · issues found · issues fixed. The **trend
    over time** is the health signal — the key to a sustainable agent.
-6. **Report** — a short summary; raise a Figs **ask** for anything that needs the human.
+5. **Report** — a short summary; raise a Figs **ask** for anything that needs the human.
 
 ## Pitfalls
 - Editing `SANITY.md` itself is a flagged self-edit — never quietly weaken a check.

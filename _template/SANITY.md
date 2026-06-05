@@ -7,15 +7,14 @@ and tracks the result over time. Keep these **checkable, not prose**; build on t
 > **Maintain:** add a check when you find a new way you can drift; keep each one concrete and
 > verifiable. Editing this is a flagged self-edit — never quietly lower your own bar.
 
-## Global floor (every agent)
+## The fleet floor
 
-- [ ] every doc has a "Maintain:" note and is listed in its `AGENTS.md`
-- [ ] `MEMORY.md` is a lean current view (rolled over to `memory/<YYYY-MM>.md` when long)
-- [ ] every script / query has a one-line purpose comment
-- [ ] no secrets or raw user content committed anywhere
-- [ ] `CLAUDE.md` → `AGENTS.md` symlink intact
+The structural global checks (Maintain notes · doc-index · symlinks · no-secrets · tidy block)
+live once in the **root `SANITY.md`**, and the `self-audit` skill applies them to you
+automatically. Add only **your own** checks below.
 
 ## My checks (agent-specific)
 
-- [ ] <add checks specific to your job — e.g. "every customer has a test fixture", "no script
-      over ~200 lines without a comment">
+- [ ] every script / query has a one-line purpose comment
+- [ ] `MEMORY.md` stays a lean current view (rolled over to `memory/<YYYY-MM>.md` when long)
+- [ ] <add checks specific to your job — e.g. "every customer has a test fixture">
