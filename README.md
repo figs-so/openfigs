@@ -21,7 +21,12 @@ layer** that lets you actually delegate it. OpenFigs is the build side; Figs is 
 ## How it works
 
 - **One folder = one agent** — `agents/<name>/` with its own `AGENTS.md` + `MEMORY.md` +
-  `reports/` + `.figs/`. The root [`AGENTS.md`](./AGENTS.md) composes above every agent.
+  `reports/` + `.figs/`. The root [`AGENTS.md`](./AGENTS.md) is shared by every agent and
+  composes above each one.
+- **Small, focused agents** — one agent, one job. Spin up a new dedicated agent for a new
+  scope rather than growing a do-everything one.
+- **Runtime-agnostic** — `AGENTS.md` is canonical; `CLAUDE.md` is a symlink to it, so Claude
+  Code, Codex, and opencode all read the same source of truth.
 - **Scaffold** a new agent, fill in its guide, run it on your runtime, connect it to Figs.
 
 Start with [`AGENTS.md`](./AGENTS.md) — the operating guide every agent inherits.

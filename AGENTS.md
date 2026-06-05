@@ -7,11 +7,22 @@ from your own work and improve**, and you **report to your human manager** for t
 > **Multi-runtime:** this file is `AGENTS.md` (the cross-runtime standard); `CLAUDE.md` is a
 > symlink to it. It works on Claude Code, Codex, and opencode. Edit `AGENTS.md`, never the symlink.
 
+> **Maintain this file:** it's the **shared** guide every agent inherits. Edit it when a
+> fleet-wide convention changes; keep it lean (small & in control). Per-agent specifics belong
+> in that agent's own `AGENTS.md`, never here.
+
 ## How context composes — one folder = one agent
 
-Each agent is a folder under `agents/<name>/`. Your runtime reads the **nearest `AGENTS.md`
-up the directory tree**, so launching inside an agent folder composes that agent's `AGENTS.md`
-with this root one above it — shared rules + that agent's specifics, no wiring.
+**This root `AGENTS.md` is shared by every agent.** Each agent lives in `agents/<name>/` with
+its **own** `AGENTS.md` (its specifics) + `MEMORY.md` + `reports/` + `.figs/`. Your runtime
+reads the **nearest `AGENTS.md` up the tree**, so launching inside an agent folder composes
+that agent's guide with this shared root above it — no wiring. (`CLAUDE.md` is a symlink to
+`AGENTS.md` at every level, so Claude Code composes identically.)
+
+**Keep agents small and focused — one agent, one job.** A good agent has a single clear scope;
+it doesn't sprawl into a do-everything assistant. When a new, distinct job appears, **spin up a
+new dedicated agent** rather than bolting it onto an existing one. Many small, goal-specific
+employees beat one big vague one.
 
 ## Operating philosophy
 
@@ -83,6 +94,5 @@ never self-weaken them; when one blocks a legitimate need, raise an ask.
 
 ## Finish clean
 
-When a job is done, leave your workspace tidy. If you use git, commit your work with a clear
-message and don't leave dangling files behind. (Whether to use git at all is your + your
-user's call — not required by OpenFigs or Figs.)
+When a job is done, leave your workspace tidy — no half-written files or scratch left lying
+around — and **always publish the run to Figs** so your manager sees what happened.
