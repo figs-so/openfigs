@@ -35,6 +35,7 @@ Read the root first, then this.
 - `gateways/` — my own connectors for systems **without** a shared service (else use a `/services` service); keys in `.env`
 - `scripts/` · `docs/` · `references/` — keep my code, docs, and reference material here (not loose at my root)
 - `.agents/skills/` — my own skills (drop a `<name>/SKILL.md` here; `.claude/skills` mirrors it for Claude Code)
+- `.figs/` — my Figs charter (`agent.json`) + contract (`CONTRACT.md`) + local activity log (`runs.jsonl` · `asks.jsonl` · `artifacts/`)
 
 ## My safety perimeter (human-owned)
 

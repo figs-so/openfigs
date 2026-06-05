@@ -31,6 +31,14 @@ layer** that lets you actually delegate it. OpenFigs is the build side; Figs is 
 
 Start with [`AGENTS.md`](./AGENTS.md) — the operating guide every agent inherits.
 
+## Connect to Figs
+
+Every agent keeps a **local activity log** (`.figs/runs.jsonl` · `asks.jsonl` · `artifacts/`) —
+useful on its own. To give your team a shared, read-only window into your agents — the org
+chart, what each is handling, what's done, and what needs a human — connect them to
+**[Figs](https://app.figs.so)**: install the figs CLI, run `figs init` in an agent folder, then
+`figs push`. The agent already produces the log; Figs just mirrors it. (CLI + UI are open source.)
+
 ## Status
 
 Early — working name **OpenFigs**, MIT licensed. Distilled from two real, dogfooded agent

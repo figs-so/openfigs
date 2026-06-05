@@ -31,10 +31,16 @@ fs.mkdirSync(path.dirname(dest), { recursive: true })
 fs.cpSync(src, dest, { recursive: true })
 
 const leaf = name.split("/").pop()
-for (const file of ["AGENTS.md", "MEMORY.md", "SANITY.md"]) {
+for (const file of ["AGENTS.md", "MEMORY.md", "SANITY.md", ".figs/agent.json", ".figs/CONTRACT.md"]) {
   const p = path.join(dest, file)
   if (fs.existsSync(p)) fs.writeFileSync(p, fs.readFileSync(p, "utf8").replaceAll("<AGENT_NAME>", leaf))
 }
+
+// Create the local Figs activity log (gitignored) so the agent logs runs/asks from day one —
+// valuable on its own, and `figs init` + `figs push` later just mirror it to the manager.
+const figs = path.join(dest, ".figs")
+fs.mkdirSync(path.join(figs, "artifacts"), { recursive: true })
+for (const f of ["runs.jsonl", "asks.jsonl"]) fs.writeFileSync(path.join(figs, f), "")
 
 // (Re)write the CLAUDE.md -> AGENTS.md symlink so Claude Code composes this agent's guide.
 const claude = path.join(dest, "CLAUDE.md")
