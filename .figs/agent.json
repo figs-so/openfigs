@@ -1,15 +1,15 @@
 {
-  "name": "Fleet Steward",
-  "role": "Fleet steward & recruiter (the root block)",
-  "mandate": "Steward the OpenFigs fleet — keep the roster and fleet rules current, and recruit & onboard new agents.",
+  "name": "Recruiter",
+  "role": "Recruits & maintains the fleet",
+  "mandate": "Keep the OpenFigs fleet healthy — maintain the roster and fleet rules, and recruit & onboard new agents.",
   "status": "in_dev",
   "runtime": "Claude Code",
   "org": { "department": "Fleet" },
   "cadence": "on-demand",
-  "steps": [
-    "Recruit — create a well-scoped new agent (the `recruit` skill)",
-    "Steward — keep the roster + fleet rules (root AGENTS.md / MEMORY.md) current",
-    "Audit — run `self-audit` across the fleet; flag drift"
+  "responsibilities": [
+    "Recruit & onboard new agents (the `recruit` skill)",
+    "Keep the roster + fleet rules (root AGENTS.md / MEMORY.md) current",
+    "Run `self-audit` across the fleet; flag drift"
   ],
   "properties": [
     { "k": "scope", "v": "the whole fleet; individual agents do their own jobs" }

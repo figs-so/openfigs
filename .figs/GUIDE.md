@@ -1,7 +1,7 @@
 <!-- Pointer to Figs. `figs init` regenerates this — don't keep anything precious here. -->
-# Figs — the fleet steward (root block)
+# Figs — the Recruiter (root block)
 
-The root block (the fleet steward) publishes to **Figs** like any agent.
+The root block (the Recruiter) publishes to **Figs** like any agent.
 
 - **Charter** → `agent.json` · **Contract** → `CONTRACT.md`.
 - **Local activity log:** `runs.jsonl` · `asks.jsonl` · `artifacts/`.

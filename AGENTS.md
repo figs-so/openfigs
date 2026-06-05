@@ -29,7 +29,7 @@ context, so deep trees bloat and confuse it. Root + (optionally) a department + 
 **2–3 levels** — is plenty; nesting deeper usually means you want a flatter set of focused
 agents instead.
 
-**At the root, your job is to steward the fleet and recruit.** When you work at the repo root —
+**At the root, your job is to recruit and maintain the fleet.** When you work at the repo root —
 not inside an agent — keep the roster + fleet rules current and create new agents with the
 **`recruit`** skill. Everything else in this file is the shared floor every agent inherits.
 
@@ -174,8 +174,8 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 
 - `README.md` — what OpenFigs is + how to use it
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
-- `MEMORY.md` · `SANITY.md` (root) — the fleet steward's memory + the fleet floor (global checks)
-- `.figs/` (root) — the fleet steward's Figs charter/contract + local activity log (the root is a block too)
+- `MEMORY.md` · `SANITY.md` (root) — the root's memory + the fleet floor (global checks)
+- `.figs/` (root) — the root's Figs charter/contract + local activity log (the root is a block too)
 - `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
 - `services/` — the shared connector library (thin, tested services many agents reuse; the

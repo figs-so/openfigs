@@ -1,6 +1,6 @@
-# Activity contract — Fleet Steward on Figs
+# Activity contract — Recruiter on Figs
 
-What the root steward surfaces to Figs. (The root is a block too — it reports like any agent.)
+What the root (the Recruiter) surfaces to Figs. (The root is a block too — it reports like any agent.)
 
 > **Maintain:** edit when the surfacing agreement changes.
 
