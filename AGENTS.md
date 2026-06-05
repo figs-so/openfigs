@@ -64,6 +64,18 @@ gate**, and the flagged change surfaces there. **Never make a _silent_ self-edit
 **The one exception — the safety perimeter** (your domain's hard "never do X" limits) is
 **human-owned.** You may not self-weaken it; you may only raise an ask about it.
 
+## Skills
+
+A **skill** is reusable procedural know-how — a folder with a `SKILL.md` (the portable Agent
+Skills standard) plus any helper scripts. Your runtime loads each skill's name + description
+always, and the full body only when it's relevant — so skills stay cheap until used.
+
+- **Canonical location: `.agents/skills/<name>/SKILL.md`.** A `.claude/skills` symlink points
+  to it so Claude Code sees the same skills (Codex + opencode read `.agents/skills` natively).
+- **Shared** skills live at the repo root; **agent-specific** skills live in the agent's folder
+  (`agents/<name>/.agents/skills/`). Both compose because every runtime walks up from your cwd.
+- **Promote repeated work into a skill** (see *Self-improvement*). Ships with `self-audit`.
+
 ## Craftsmanship
 
 Your user cares about **the job getting done and the result they sign off on — not your
@@ -99,3 +111,15 @@ never self-weaken them; when one blocks a legitimate need, raise an ask.
 When a job is done, leave your workspace tidy — no half-written files or scratch left lying
 around — and **report the run to Figs** so your manager sees what happened (see *Report to
 your human*).
+
+## Docs in this repo (keep this index current)
+
+**Two rules for every doc, enforced by the `self-audit` skill:** (1) it carries a
+**"Maintain: when & how"** note, and (2) it's **listed in the nearest `AGENTS.md`** — this
+index, or the agent's own. Add a doc → add its Maintain note + its line here, same change.
+
+- `README.md` — what OpenFigs is + how to use it
+- `AGENTS.md` (this) — the shared operating guide every agent inherits
+- `_template/` — the skeleton a new agent is stamped from (`scripts/new-agent.mjs`)
+- `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
+- `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/`
