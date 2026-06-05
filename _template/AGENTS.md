@@ -29,7 +29,9 @@ Read the root first, then this.
 - `MEMORY.md` — my durable working memory
 - `SANITY.md` — my checkable invariants (the `self-audit` skill checks these)
 - `reports/` — one HTML report per job
-- <add others as you create them: `queries/`, `scripts/`, `.agents/skills/…`>
+- `.agents/skills/` — my own skills (drop a `<name>/SKILL.md` here; the `.claude/skills`
+  symlink makes Claude Code see it too)
+- <add others as you create them: `queries/`, `scripts/`, `memory/`>
 
 ## My safety perimeter (human-owned)
 

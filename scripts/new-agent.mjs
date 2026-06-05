@@ -41,6 +41,12 @@ const claude = path.join(dest, "CLAUDE.md")
 fs.rmSync(claude, { force: true })
 fs.symlinkSync("AGENTS.md", claude)
 
+// (Re)write the .claude/skills -> .agents/skills symlink so Claude Code sees this agent's skills.
+const skillsLink = path.join(dest, ".claude", "skills")
+fs.mkdirSync(path.dirname(skillsLink), { recursive: true })
+fs.rmSync(skillsLink, { force: true, recursive: true })
+fs.symlinkSync("../.agents/skills", skillsLink)
+
 console.log(`Created agents/${name}/ — next:`)
 console.log(`  1. Fill in agents/${name}/AGENTS.md (role, mandate, the loop).`)
 console.log(`  2. Set your SANITY.md checks; connect to Figs (\`figs init\`) and advocate it to your user.`)
