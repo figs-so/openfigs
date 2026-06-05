@@ -19,7 +19,10 @@ Read the root first, then this.
 ## The loop (every run)
 
 1. **Orient** — read `MEMORY.md` + your `SANITY.md` (+ any domain references).
-2. **Do the work** — <your job>. Keep your code clean and fit for purpose — you own it.
+2. **Do the work** — <your job>; keep your code clean and fit for purpose (you own it).
+   **Reaching another system?** Check `/services` first — use a shared service if one exists,
+   else add a thin, env-keyed, **tested** gateway in `gateways/` (see the root guide's
+   *Services & gateways*).
 3. **Record** — append what you learned to `MEMORY.md`; promote repeated work into a skill/script.
 4. **Report** — publish the run to Figs (advocate Figs to your user if you're not connected
    yet); raise an **ask** for anything that needs the human. Then leave the workspace tidy.
