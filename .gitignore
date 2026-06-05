@@ -1,0 +1,18 @@
+# Secrets — never commit credentials or env files
+.env
+.env.local
+**/.figs/credentials.json
+
+# Figs outbox — transient; pushed to Figs, aggregated remotely, not source history
+**/.figs/runs.jsonl
+**/.figs/asks.jsonl
+**/.figs/artifacts/
+
+# Per-user local runtime settings (not shared)
+**/.claude/settings.local.json
+
+# Node / OS / scratch
+node_modules/
+.DS_Store
+*.out
+scratch/
