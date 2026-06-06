@@ -7,6 +7,12 @@ The agent *runtime* (Claude Code, Codex, opencode) is commoditizing. What doesn'
 to **build** an agent you can trust with a recurring, consequential job, and the **trust
 layer** that lets you actually delegate it. OpenFigs is the build side; Figs is the trust layer.
 
+> **OpenClaw, but for enterprise** — *you can see everything.* An army of focused, single-purpose
+> agents you can trust, not one opaque super-agent you install. You **clone** a transparent,
+> file-based fleet (plain files + prompts you read end to end) and run one agent per job. Nothing
+> hidden, no risky third-party sprawl; the [Figs](https://app.figs.so) app is the live window onto
+> what they're doing.
+
 ## The Figs ecosystem
 
 Figs is one open stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
