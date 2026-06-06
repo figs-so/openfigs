@@ -11,6 +11,9 @@
 # Per-user local runtime settings (not shared)
 **/.claude/settings.local.json
 
+# Internal strategy/positioning notes — never publish (this repo is MIT/public-bound)
+POSITIONING.md
+
 # Node / OS / scratch
 node_modules/
 .DS_Store
