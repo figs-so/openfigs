@@ -13,16 +13,6 @@ layer** that lets you actually delegate it. OpenFigs is the build side; Figs is 
 > hidden, no risky third-party sprawl; the [Figs](https://app.figs.so) app is the live window onto
 > what they're doing.
 
-## The Figs ecosystem
-
-Figs is one open stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
-
-| Layer | Repo | License | Role |
-|---|---|---|---|
-| 🏗️ Build | **[OpenFigs](https://github.com/figs-so/openfigs)** | MIT | build trustworthy back-office AI employees — conventions + skeleton, runtime-agnostic — **← you're here** |
-| 📤 Report | **[`.figs` + CLI](https://github.com/figs-so/figs)** | MIT | the open standard an agent reports its state in |
-| 👁️ Govern | **[Figs app](https://github.com/figs-so/app)** · [app.figs.so](https://app.figs.so) | AGPL-3.0 | the org chart + handoff inbox humans read |
-
 ## Get started
 
 **Requires [Node](https://nodejs.org) ≥ 18.** Scaffold a fleet — and your first agent — in one line:
@@ -31,8 +21,9 @@ Figs is one open stack in three pieces — **build → report → govern**. Land
 npm create openfigs@latest my-fleet
 ```
 
-That stamps out the skeleton, wires up the runtime symlinks, and (optionally) scaffolds your
-first agent. Then:
+That fetches the latest skeleton, wires up the runtime symlinks, and (optionally) scaffolds your
+first agent. (`npx create-openfigs my-fleet` is equivalent — as are `yarn create openfigs` and
+`pnpm create openfigs`.) Then:
 
 ```bash
 cd my-fleet
@@ -40,13 +31,6 @@ cd my-fleet
 # add more agents any time:  npm run new-agent <name>
 # then connect to Figs so your manager can see it (see "Connect to Figs" below):
 npx @figs-so/cli@latest login && npx @figs-so/cli@latest init
-```
-
-Just want the raw skeleton, no prompts? Grab it directly with
-[degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit figs-so/openfigs my-fleet     # then: cd my-fleet && npm run new-agent <name>
 ```
 
 > **⚠️ Don't "Download ZIP" from GitHub.** This repo uses symlinks (`CLAUDE.md` → `AGENTS.md`,
@@ -85,6 +69,16 @@ useful on its own. To give your team a shared, read-only window into your agents
 chart, what each is handling, what's done, and what needs a human — connect them to
 **[Figs](https://app.figs.so)**: install the figs CLI, run `figs init` in an agent folder, then
 `figs push`. The agent already produces the log; Figs just mirrors it. (CLI + UI are open source.)
+
+## The Figs ecosystem
+
+Figs is one open stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
+
+| Layer | Repo | License | Role |
+|---|---|---|---|
+| 🏗️ Build | **[OpenFigs](https://github.com/figs-so/openfigs)** | MIT | build trustworthy back-office AI employees — conventions + skeleton, runtime-agnostic — **← you're here** |
+| 📤 Report | **[`.figs` + CLI](https://github.com/figs-so/figs)** | MIT | the open standard an agent reports its state in |
+| 👁️ Govern | **[Figs app](https://github.com/figs-so/app)** · [app.figs.so](https://app.figs.so) | AGPL-3.0 | the org chart + handoff inbox humans read |
 
 ## Status
 
