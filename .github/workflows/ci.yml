@@ -1,0 +1,29 @@
+name: CI
+
+# Runs on every push + PR: shared services must stay tested, and the runtime symlinks
+# (CLAUDE.md -> AGENTS.md, .claude/skills -> .agents/skills) must stay intact.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # Zero-dependency repo — nothing to install.
+      - name: Symlinks intact
+        run: node scripts/fix-symlinks.mjs --check
+
+      - name: Test shared services
+        run: npm test

@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "new-agent": "node scripts/new-agent.mjs",
+    "fix-symlinks": "node scripts/fix-symlinks.mjs",
     "test": "node --test"
   }
 }

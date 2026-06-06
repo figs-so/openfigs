@@ -173,6 +173,7 @@ your human*).
 index, or the agent's own. Add a doc → add its Maintain note + its line here, same change.
 
 - `README.md` — what OpenFigs is + how to use it
+- `CONTRIBUTING.md` — how to contribute (esp. adding a shared service); the PR + test conventions
 - `AGENTS.md` (this) — the shared operating guide every agent inherits
 - `MEMORY.md` · `SANITY.md` (root) — the root's memory + the fleet floor (global checks)
 - `.figs/` (root) — the root's Figs charter/contract + local activity log (the root is a block too)
