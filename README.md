@@ -7,6 +7,47 @@ The agent *runtime* (Claude Code, Codex, opencode) is commoditizing. What doesn'
 to **build** an agent you can trust with a recurring, consequential job, and the **trust
 layer** that lets you actually delegate it. OpenFigs is the build side; Figs is the trust layer.
 
+## The Figs ecosystem
+
+Figs is one open stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
+
+| Layer | Repo | License | Role |
+|---|---|---|---|
+| 🏗️ Build | **[OpenFigs](https://github.com/figs-so/openfigs)** | MIT | build trustworthy back-office AI employees — conventions + skeleton, runtime-agnostic — **← you're here** |
+| 📤 Report | **[`.figs` + CLI](https://github.com/figs-so/figs)** | MIT | the open standard an agent reports its state in |
+| 👁️ Govern | **[Figs app](https://github.com/figs-so/app)** · [app.figs.so](https://app.figs.so) | AGPL-3.0 | the org chart + handoff inbox humans read |
+
+## Get started
+
+**Requires [Node](https://nodejs.org) ≥ 18.** Scaffold a fleet — and your first agent — in one line:
+
+```bash
+npm create openfigs@latest my-fleet
+```
+
+That stamps out the skeleton, wires up the runtime symlinks, and (optionally) scaffolds your
+first agent. Then:
+
+```bash
+cd my-fleet
+# fill in agents/<name>/AGENTS.md — its role, mandate, and the loop it runs
+# add more agents any time:  npm run new-agent <name>
+# then connect to Figs so your manager can see it (see "Connect to Figs" below):
+npx @figs-so/cli@latest login && npx @figs-so/cli@latest init
+```
+
+Just want the raw skeleton, no prompts? Grab it directly with
+[degit](https://github.com/Rich-Harris/degit):
+
+```bash
+npx degit figs-so/openfigs my-fleet     # then: cd my-fleet && npm run new-agent <name>
+```
+
+> **⚠️ Don't "Download ZIP" from GitHub.** This repo uses symlinks (`CLAUDE.md` → `AGENTS.md`,
+> `.claude/skills` → `.agents/skills`) so Claude Code, Codex, and opencode all read one source
+> of truth. GitHub's ZIP export turns them into broken text files. The commands above (and
+> `git clone`) preserve them; if a symlink ever breaks, run `npm run fix-symlinks` to repair it.
+
 ## Philosophy
 
 - **Infra, not dictation** — conventions + guardrails in plain files; *what* the agent does is
