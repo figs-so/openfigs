@@ -76,6 +76,11 @@ change solid logic is usually a **signal** that the input changed — surfacing 
 There is **no separate approval step**: your human's existing **sign-off on your output is the
 gate**, and the flagged change surfaces there. **Never make a _silent_ self-edit.**
 
+**Record gotchas.** When the same non-obvious trap bites twice, first ask *did I cause this?*
+If it's your own logic, fix it (a flagged self-edit). If it's external and immovable, note it
+in your `MEMORY.md` `## Gotchas` block — one line, what-bites → why → workaround — so no agent
+re-researches or re-fixes it.
+
 **The one exception — the safety perimeter** (your domain's hard "never do X" limits) is
 **human-owned.** You may not self-weaken it; you may only raise an ask about it.
 
