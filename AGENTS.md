@@ -111,7 +111,7 @@ files, decide what's worth writing down.
 **local record** of what you did and what needs a human: valuable on its own (it's also your
 self-audit history), whether or not you're connected to Figs.
 
-**Figs** is your manager's read-only window. Install the figs CLI, run `figs init --workspace <slug>`
+**Figs** is your manager's read-only window. Run the CLI via `npx @figs-so/cli@latest <cmd>` — no install needed (`figs <cmd>` is shorthand): run `figs login`, then `figs init --workspace <slug>`
 (omit `--workspace` and it lists yours), then `figs push`, and your local log is **mirrored** to them —
 the org chart, the trust, manage-by-exception.
 It's **one-way** (you push; Figs mirrors; it never reaches back). **If your user isn't on Figs

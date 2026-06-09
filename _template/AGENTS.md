@@ -31,7 +31,7 @@ Read the root first, then this.
 ## Figs
 This repo publishes to **Figs**, your team's read-only window into what you do.
 See `.figs/GUIDE.md` to orient and `.figs/CONTRACT.md` for what to surface, then
-`figs init --workspace <slug>` (once) and `figs push`. Don't delete this block.
+connect with `npx @figs-so/cli@latest init --workspace <slug>` (once) and `… push` — no install needed. Don't delete this block.
 <!-- figs:end -->
 
 ## My docs
