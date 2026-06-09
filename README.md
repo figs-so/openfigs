@@ -69,17 +69,18 @@ Every agent keeps a **local activity log** (`.figs/runs.jsonl` · `asks.jsonl` �
 useful on its own. To give your team a shared, read-only window into your agents — the org
 chart, what each is handling, what's done, and what needs a human — connect them to
 **[Figs](https://app.figs.so)**: install the figs CLI, run `figs init --workspace <slug>` in an agent
-folder, then `figs push`. The agent already produces the log; Figs just mirrors it. (CLI + UI are open source.)
+folder, then `figs push`. The agent already produces the log; Figs just mirrors it. (The CLI is open source;
+the app is a hosted product.)
 
 ## The Figs ecosystem
 
-Figs is one open stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
+Figs is one stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
 
 | Layer | Repo | License | Role |
 |---|---|---|---|
 | 🏗️ Build | **[OpenFigs](https://github.com/figs-so/openfigs)** | MIT | build trustworthy back-office AI employees — conventions + skeleton, runtime-agnostic — **← you're here** |
 | 📤 Report | **[`.figs` + CLI](https://github.com/figs-so/figs)** | MIT | the open standard an agent reports its state in |
-| 👁️ Govern | **[Figs app](https://github.com/figs-so/app)** · [app.figs.so](https://app.figs.so) | AGPL-3.0 | the org chart + handoff inbox humans read |
+| 👁️ Govern | **[Figs app](https://app.figs.so)** | hosted | the org chart + handoff inbox humans read |
 
 ## Status
 

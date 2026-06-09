@@ -5,6 +5,6 @@ The root block (the Recruiter) publishes to **Figs** like any agent.
 
 - **Charter** → `agent.json` · **Contract** → `CONTRACT.md`.
 - **Local activity log:** `runs.jsonl` · `asks.jsonl` · `artifacts/`.
-- **Connect:** install the figs CLI, run `figs init --workspace <slug>` here, then `figs push`. CLI + UI: https://app.figs.so (open source).
+- **Connect:** install the figs CLI, run `figs init --workspace <slug>` here, then `figs push`. CLI (open source) + the hosted app: https://app.figs.so.
 
 Identity (`config.json`) is minted by `figs init` — never hand-author it.
