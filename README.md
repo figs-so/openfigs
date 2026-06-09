@@ -30,7 +30,8 @@ cd my-fleet
 # fill in agents/<name>/AGENTS.md — its role, mandate, and the loop it runs
 # add more agents any time:  npm run new-agent <name>
 # then connect to Figs so your manager can see it (see "Connect to Figs" below):
-npx @figs-so/cli@latest login && npx @figs-so/cli@latest init
+npx @figs-so/cli@latest login                     # approve in your browser
+npx @figs-so/cli@latest init --workspace <slug>   # `… workspaces` lists your slugs (omit --workspace and init lists them)
 ```
 
 > **⚠️ Don't "Download ZIP" from GitHub.** This repo uses symlinks (`CLAUDE.md` → `AGENTS.md`,
@@ -67,8 +68,8 @@ Start with [`AGENTS.md`](./AGENTS.md) — the operating guide every agent inheri
 Every agent keeps a **local activity log** (`.figs/runs.jsonl` · `asks.jsonl` · `artifacts/`) —
 useful on its own. To give your team a shared, read-only window into your agents — the org
 chart, what each is handling, what's done, and what needs a human — connect them to
-**[Figs](https://app.figs.so)**: install the figs CLI, run `figs init` in an agent folder, then
-`figs push`. The agent already produces the log; Figs just mirrors it. (CLI + UI are open source.)
+**[Figs](https://app.figs.so)**: install the figs CLI, run `figs init --workspace <slug>` in an agent
+folder, then `figs push`. The agent already produces the log; Figs just mirrors it. (CLI + UI are open source.)
 
 ## The Figs ecosystem
 
