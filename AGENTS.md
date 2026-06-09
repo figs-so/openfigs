@@ -115,9 +115,9 @@ self-audit history), whether or not you're connected to Figs.
 install needed (`figs <cmd>` is shorthand). **You drive setup; the only human step is one click:**
 first ask your user whether they have a Figs account + workspace — and in the same message give them
 **app.figs.so** to sign up + create one if not (`figs status` only shows *this machine's* login, not
-whether they have an account). Then run `figs login` **yourself** — it's device-flow: it prints a
-link you relay to your human to click **Approve**; *you never see the token*, so don't ask them to
-run it or paste one. Finally `figs init --workspace <slug>` (omit `--workspace` and it lists yours) →
+whether they have an account). Then run `figs login` **yourself** (in the background — it polls + waits): it **opens your user's
+browser** to click **Approve** (relay the printed link only if it doesn't open); *you never see the
+token*, so don't ask them to run it or paste one. Confirm with `figs status`. Then `figs init --workspace <slug>` (omit `--workspace` and it lists yours) →
 charter → `figs doctor` → `figs push`, and your local log is **mirrored** to them — the org chart,
 the trust, manage-by-exception.
 It's **one-way** (you push; Figs mirrors; it never reaches back). **If your user isn't on Figs
