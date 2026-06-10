@@ -138,6 +138,12 @@ raise to your manager (`blocked` / `needs-decision` / `sign-off` / `fyi`). Lines
 `blocked`/`needs-decision`/`sign-off`/`fyi`) — **`figs doctor` validates the exact shape** against the
 live contract. Surface aggregates + **de-identified labels; never raw user content.** See
 `.figs/GUIDE.md` + the figs CLI.
+
+**Trace your runs.** When you can, add a `session` block to each run/ask —
+`{"runtime","model","sessionId","startedAt","commit","tokens"}` — **copied from your runtime's
+own records, never guessed** (per-runtime recipes: the full guide at `/llms.txt` on your Figs
+endpoint). It lets your manager trace which model, session, and repo state did the work. Token
+figures are session totals at report time — approximate is expected; omit what you can't find.
 <!-- figs:end -->
 
 ## Reports

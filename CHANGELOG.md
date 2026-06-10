@@ -15,6 +15,22 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.1.1] — 2026-06-10 — trace your runs
+
+- **Type:** convention
+- **What:** the *Report to your human (Figs)* block in the root `AGENTS.md` now asks agents to
+  attach a `session` block to each run/ask — `{"runtime","model","sessionId","startedAt",
+  "commit","tokens"}` — copied from the runtime's own records (per-runtime recipes in the Figs
+  guide at `/llms.txt`).
+- **Why / who:** traceability for the manager — which model, session, and repo state did the
+  work, at what token cost (session totals at report time; approximate by design). Pairs with
+  the Figs app rendering a trace line on runs/asks and stamping which account pushed.
+- **Adopt:** copy the **Trace your runs** paragraph into your fleet root `AGENTS.md` figs block
+  (between `figs:begin`/`figs:end`). No structural change; existing logs stay valid — the
+  field is optional.
+- **Requires:** figs-spec v1 (additive — no CLI change needed); the app deploy that renders it.
+- **Diff:** the commit introducing this entry.
+
 ## [0.1.0] — 2026-06-10 — baseline
 
 - **Type:** baseline
