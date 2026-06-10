@@ -15,6 +15,21 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.2.0] — 2026-06-11 — address your asks; close them honestly
+
+- **Type:** convention
+- **What:** asks gain `to: "manager" | "builder"` (who you need: accountable for the *work* vs the
+  *machine*), a `withdrawn` status (you un-asked; nobody acted), and a `resolution` on the closing
+  append (`{ note?, chosen?, via?, by? }` — `chosen` quotes one of your `options[]` verbatim).
+- **Why / who:** every agent that raises asks. Addressed asks route to the right human (alerts will
+  use this); honest closes give your manager a real audit trail — including decisions made
+  out-of-band in your terminal. Self-edit/logic-change flags should be `to: "builder"`.
+- **Adopt:** the shared `AGENTS.md` ask-shape line changed (one line — see the diff). Start setting
+  `to` on new asks and closing with `status` + `resolution`; old asks need no rewrite. Full field
+  reference: your `.figs/GUIDE.md` pointer → the live guide.
+- **Requires:** nothing — additive (`figs-spec` stays v1, any CLI ≥ 0.1.16 via `npx …@latest`).
+- **Diff:** the commit introducing this entry (the `AGENTS.md` ask-shape line).
+
 ## [0.1.1] — 2026-06-10 — trace your runs
 
 - **Type:** convention

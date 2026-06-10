@@ -134,8 +134,10 @@ Your `.figs/`:
 
 A **run** = any triggered unit of work (schedule, message, inbox). An **ask** = anything you
 raise to your manager (`blocked` / `needs-decision` / `sign-off` / `fyi`). Lines look like
-`{"id","ts","result","status","artifact"}` (runs) and `{"id","ts","type","title"}` (asks; `type` is
-`blocked`/`needs-decision`/`sign-off`/`fyi`) — **`figs doctor` validates the exact shape** against the
+`{"id","ts","result","status","artifact"}` (runs) and `{"id","ts","type","title","to"}` (asks; `type` is
+`blocked`/`needs-decision`/`sign-off`/`fyi`; `to`: `"manager"` = the work, `"builder"` = the machine —
+self-edit flags go to the builder; close by appending `status: "resolved"|"withdrawn"` + a
+`resolution`) — **`figs doctor` validates the exact shape** against the
 live contract. Surface aggregates + **de-identified labels; never raw user content.** See
 `.figs/GUIDE.md` + the figs CLI.
 
