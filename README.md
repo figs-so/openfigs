@@ -30,8 +30,8 @@ cd my-fleet
 # fill in agents/<name>/AGENTS.md — its role, mandate, and the loop it runs
 # add more agents any time:  npm run new-agent <name>
 # then connect to Figs so your manager can see it (see "Connect to Figs" below):
-npx @figs-so/cli@latest login                     # approve in your browser
-npx @figs-so/cli@latest init --workspace <slug>   # `… workspaces` lists your slugs (omit --workspace and init lists them)
+npx @figs-so/cli@latest login                     # opens your browser — sign up & approve
+npx @figs-so/cli@latest init                      # scaffolds .figs/ — uses your only workspace (--workspace <slug> to pick)
 ```
 
 > **⚠️ Don't "Download ZIP" from GitHub.** This repo uses symlinks (`CLAUDE.md` → `AGENTS.md`,

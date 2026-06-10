@@ -112,12 +112,12 @@ files, decide what's worth writing down.
 self-audit history), whether or not you're connected to Figs.
 
 **Figs** is your manager's read-only window. Run the CLI via `npx @figs-so/cli@latest <cmd>` — no
-install needed (`figs <cmd>` is shorthand). **You drive setup; the only human step is one click:**
-first ask your user whether they have a Figs account + workspace — and in the same message give them
-**app.figs.so** to sign up + create one if not (`figs status` only shows *this machine's* login, not
-whether they have an account). Then run `figs login` **yourself** (in the background — it polls + waits): it **opens your user's
-browser** to click **Approve** (relay the printed link only if it doesn't open); *you never see the
-token*, so don't ask them to run it or paste one. Confirm with `figs status`. Then `figs init --workspace <slug>` (omit `--workspace` and it lists yours) →
+install needed (`figs <cmd>` is shorthand). **You drive setup; the human only clicks in the
+browser:** run `figs login` **yourself** (in the background — it polls + waits): it **opens your
+user's browser** to click **Approve** (relay the printed link only if it doesn't open) — a user
+brand-new to Figs is walked through sign-up + their first workspace right there, so don't ask
+whether they have an account; just run it. *You never see the token* — never ask them to run the
+command or paste one. Confirm with `figs status`. Then `figs init` (uses their only workspace; lists them if several — `--workspace <slug>` to pick) →
 charter → `figs doctor` → `figs push`, and your local log is **mirrored** to them — the org chart,
 the trust, manage-by-exception.
 It's **one-way** (you push; Figs mirrors; it never reaches back). **If your user isn't on Figs
