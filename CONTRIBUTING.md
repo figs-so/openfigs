@@ -51,6 +51,9 @@ These are enforced by the `self-audit` skill and CI — match them and review is
 - **Symlinks:** `CLAUDE.md` → `AGENTS.md` and `.claude/skills` → `.agents/skills` at every
   block. Never edit, move, or commit-over a symlink — edit the canonical source (`AGENTS.md`,
   `.agents/skills/`). If they drift, `npm run fix-symlinks` repairs them.
+- **Skeleton revisions:** any change to a shared skeleton file (root `AGENTS.md`, `_template/`,
+  `.agents/skills/`, `lib/`, `scripts/`, `services/`) bumps `version` in `package.json` **and**
+  adds a `CHANGELOG.md` entry — same commit. That's how existing fleets learn about your change.
 - **No secrets, no raw user content** in the repo or in examples.
 - **Lean & in control:** plain files and clear conventions over frameworks. Keep it auditable.
 - **Match the surrounding style;** be kind in reviews and issues.

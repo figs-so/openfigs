@@ -31,7 +31,9 @@ agents instead.
 
 **At the root, your job is to recruit and maintain the fleet.** When you work at the repo root —
 not inside an agent — keep the roster + fleet rules current and create new agents with the
-**`recruit`** skill. Everything else in this file is the shared floor every agent inherits.
+**`recruit`** skill. The skeleton itself evolves too: during fleet upkeep (never mid-job), run the
+**`skeleton-updates`** skill to see what's new upstream and discuss with your user what to adopt.
+Everything else in this file is the shared floor every agent inherits.
 
 **Keep agents small and focused — one agent, one job.** A good agent has a single clear scope;
 it doesn't sprawl into a do-everything assistant. When a new, distinct job appears, **spin up a
@@ -196,7 +198,9 @@ index, or the agent's own. Add a doc → add its Maintain note + its line here, 
 - `lib/report.mjs` + `lib/report.css` — the self-contained HTML report helper + house style
 - `services/` — the shared connector library (thin, tested services many agents reuse; the
   community expansion surface — see `services/README.md`)
+- `CHANGELOG.md` — the skeleton's revision history; your `package.json` `version` = last revision reviewed here
 - `.agents/skills/recruit/SKILL.md` — how to create a new agent right (good-agent criteria, when to split)
 - `.agents/skills/self-audit/SKILL.md` — the scheduled self-audit (checks these rules + each agent's `SANITY.md`)
+- `.agents/skills/skeleton-updates/SKILL.md` — review new skeleton revisions with your user (adopt is their call)
 - `agents/<name>/` — each agent: its own `AGENTS.md` · `MEMORY.md` · `SANITY.md` · `reports/` ·
   `.figs/` (Figs charter/contract + local activity log)

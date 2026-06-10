@@ -72,6 +72,14 @@ chart, what each is handling, what's done, and what needs a human — connect th
 folder, then `figs push`. The agent already produces the log; Figs just mirrors it. (The CLI is open source;
 the app is a hosted product.)
 
+## Staying current
+
+A clone is **yours** — you and your agents edit it — so skeleton improvements are never pushed
+into your fleet. Instead: `CHANGELOG.md` records every skeleton revision, your `package.json`
+`version` marks the last one you reviewed, and `npm run check-skeleton` (the `skeleton-updates`
+skill — your agent runs it during fleet upkeep) prints what you haven't seen, so you decide
+together what to adopt. Humans: **Watch → Releases** on this repo does the same job.
+
 ## The Figs ecosystem
 
 Figs is one stack in three pieces — **build → report → govern**. Land on any repo; here's the whole picture:
