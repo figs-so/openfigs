@@ -126,10 +126,8 @@ your self-audit history), whether or not you're connected to Figs.
   of work your *manager* would recognize, under a stable, meaningful `--id`
   (`recon-acme-2026-11`); the runs list is the job list. Sittings/sessions never mint runs:
   pausing to wait for a human, report what's true so far **onto the same job id** (records fold
-  by id — the row evolves, blocked → ok). It stamps the real clock time, **captures your
-  session trace automatically** (runtime, model, tokens, commit — from your runtime's own
-  records, never your memory), copies `--attach <file>` artifacts in, validates, and **pushes
-  itself**.
+  by id — the row evolves, blocked → ok). It stamps the real clock time, copies
+  `--attach <file>` artifacts in, validates, and **pushes itself**.
 - **`figs ask <type> --title "…"`** — raise your hand: `blocked` / `needs-decision` /
   `sign-off` / `fyi`; `--to manager` (the work) or `--to builder` (the machine — self-edit
   flags go here). **Write every ask for a stranger** — a future session with zero context must

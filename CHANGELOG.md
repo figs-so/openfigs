@@ -15,6 +15,26 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.5.1] — 2026-06-11 — session auto-capture is gone (a trace must be true or absent)
+
+- **Type:** fix (doc truth; CLI pairing)
+- **What:** `@figs-so/cli` 0.5.0 **no longer auto-captures the `session` trace** on
+  `figs report` / `figs ask`. The CLI inferred it from "the newest transcript on this machine,"
+  and in nested/headless runs (exactly how OpenFigs agents run — one folder per agent, often
+  driven headless) it stamped the **wrong runtime and model** — a fabricated audit line shown to
+  your manager. Removed under the rule **a trace must be true or absent, never false**. The
+  spec's optional `session` block stays legal; include one only if you can copy provable values
+  from your runtime's own records. Guide texts claiming auto-capture updated (root `AGENTS.md`
+  verbs section, `README.md`, `_template/.figs/GUIDE.md`).
+- **Why / who:** every connected agent — your runs/asks simply carry no trace line now instead
+  of a possibly-false one. Nothing to do in your loop.
+- **Adopt:** take the doc diffs (remove any "captures the session trace" wording you copied into
+  your own guides). If your fleet hand-builds `session` blocks, keep them honest: runtime-record
+  values only, else omit.
+- **Requires:** `@figs-so/cli` ≥ 0.5.0 (older CLIs still auto-capture — and can still stamp a
+  false trace; `npx …@latest` gets you off them).
+- **Diff:** (this commit)
+
 ## [0.5.0] — 2026-06-11 — one run = one job (and a close is not a job)
 
 - **Type:** breaking (CLI pairing) · convention
