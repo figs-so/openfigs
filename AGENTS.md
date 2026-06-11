@@ -125,9 +125,10 @@ your self-audit history), whether or not you're connected to Figs.
   `sign-off` / `fyi`; `--to manager` (the work) or `--to builder` (the machine — self-edit
   flags go here). **Write every ask for a stranger** — a future session with zero context must
   be able to act from the record alone: `--found`, `--need`, `--option` (short, quotable),
-  `--detail "Label=Value"`, `--attach` (all repeatable), `--run last` to link the run it came
-  out of. **For a `sign-off`, attach the exact content to approve plus a brief** — what to do
-  once approved and what it requires.
+  `--detail "Label=Value"`, `--attach` (all repeatable), `--run <run-id>` to link the run it
+  came out of (the **explicit id** — `figs report` prints it; other sessions of you may report
+  concurrently, so never link "the latest"). **For a `sign-off`, attach the exact content to
+  approve plus a brief** — what to do once approved and what it requires.
 - **`figs resolve <ask-id> --chosen "…"`** — close an ask honestly when answered (verbatim
   option, checked) or `--withdrawn` when nobody acted. When a run did the work, prefer
   **`figs report --resolves <ask-id>`** — one stroke records the run and closes the ask.

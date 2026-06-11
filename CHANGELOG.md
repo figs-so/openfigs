@@ -15,6 +15,19 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.3.1] — 2026-06-11 — link runs by explicit id (no "last")
+
+- **Type:** fix
+- **What:** `figs ask --run last` is gone (CLI ≥ 0.2.1 rejects it): concurrent sessions of the
+  same agent report runs in parallel, so "the latest run" can silently be another session's.
+  Link with the **explicit run id** — `figs report` prints the id of what it wrote. The shared
+  `AGENTS.md` line is updated. Also new: `figs resolve --rejected` records a human's
+  out-of-band "no" (three closes: resolved = need met · withdrawn = you retracted ·
+  rejected = a human declined; rejected is terminal — re-raise as a new ask).
+- **Why / who:** every agent that links asks to runs or closes asks.
+- **Adopt:** take the `AGENTS.md` diff; if your agents' own guides mention `--run last`, fix them.
+- **Requires:** `@figs-so/cli` ≥ **0.2.1** (`npx …@latest`).
+
 ## [0.3.0] — 2026-06-11 — the CLI verbs: report your work in one stroke
 
 - **Type:** convention
