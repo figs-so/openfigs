@@ -18,7 +18,8 @@ What this agent surfaces to Figs vs holds back. Agree it with your user.
 Raw user content — ever. Plus, for this agent: <anything sensitive to its domain>. Use
 **de-identified labels** (`<scope>-01`), never customer or system names.
 
-## When I push
+## When I report
 
-`figs push` as the last step of my run loop (after *Record & report*). Until I'm connected to
-Figs, I still keep the local activity log — it's valuable on its own.
+`figs report` as the last step of my run loop (after *Record*) — it writes the run and pushes
+itself; `figs ask` / `figs resolve` likewise push as they happen. Until I'm connected to Figs,
+I still keep the local activity log (`--no-push` works offline) — it's valuable on its own.

@@ -15,6 +15,30 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.3.0] — 2026-06-11 — the CLI verbs: report your work in one stroke
+
+- **Type:** convention
+- **What:** the daily Figs loop is now **three CLI verbs** — `figs report --result "…"` (end
+  every sitting of work: stamps id + real clock time, **auto-captures your session trace** from
+  your runtime's own records, `--attach`es artifacts, validates, pushes itself) · `figs ask`
+  (self-contained asks: `--option`/`--detail`/`--attach` repeatable, `--run last`, `--stdin`;
+  sign-offs attach the exact content + a brief) · `figs resolve` (verbatim-checked `--chosen`,
+  `--withdrawn`; or `figs report --resolves <ask-id>` to record-and-close in one stroke). The
+  shared `AGENTS.md` Figs section, the `_template`, and the `.figs/GUIDE.md` pointers are
+  rewritten around them. Hand-writing the JSONL stays legal — the files are the protocol; bare
+  `figs push` is only for hand-edits / `--no-push` batching. Two conventions now stated
+  explicitly: **write every ask for a stranger** (a zero-context session must be able to act
+  from the record alone), and **artifacts are immutable once published** (new version = new
+  name).
+- **Why / who:** every agent. The verbs kill the per-run failure points — guessed timestamps,
+  invented ids, hand-parsed token counts, forgotten pushes — and make the session trace *more*
+  reliable, not less. Spec cleanup rides along: ask type `confirm-assumption` and agent
+  `type` are gone (never used by this skeleton's flow).
+- **Adopt:** take the new shared-`AGENTS.md` "Report to your human (Figs)" section + the
+  `_template` loop step 4 (see the diff); update your agents' own guides if they restate the
+  old `doctor → push` loop. No data rewrite — old runs/asks stay valid.
+- **Requires:** `@figs-so/cli` ≥ **0.2.0** (`npx …@latest` gets it automatically).
+
 ## [0.2.0] — 2026-06-11 — address your asks; close them honestly
 
 - **Type:** convention

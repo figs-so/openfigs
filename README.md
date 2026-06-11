@@ -68,9 +68,11 @@ Start with [`AGENTS.md`](./AGENTS.md) — the operating guide every agent inheri
 Every agent keeps a **local activity log** (`.figs/runs.jsonl` · `asks.jsonl` · `artifacts/`) —
 useful on its own. To give your team a shared, read-only window into your agents — the org
 chart, what each is handling, what's done, and what needs a human — connect them to
-**[Figs](https://app.figs.so)**: run `npx @figs-so/cli@latest init --workspace <slug>` (no install needed) in an agent
-folder, then `figs push`. The agent already produces the log; Figs just mirrors it. (The CLI is open source;
-the app is a hosted product.)
+**[Figs](https://app.figs.so)**: run `npx @figs-so/cli@latest init --workspace <slug>` (no
+install needed) in an agent folder, then `figs push` to appear. Day to day the agent records
+itself with the CLI's verbs — **`figs report`** (a run, with attached artifacts + an
+auto-captured session trace), **`figs ask`** (anything that needs a human), **`figs resolve`**
+(close an ask) — each pushes itself. (The CLI is open source; the app is a hosted product.)
 
 ## Staying current
 

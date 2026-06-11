@@ -36,8 +36,8 @@ for (const file of ["AGENTS.md", "MEMORY.md", "SANITY.md", ".figs/agent.json", "
   if (fs.existsSync(p)) fs.writeFileSync(p, fs.readFileSync(p, "utf8").replaceAll("<AGENT_NAME>", leaf))
 }
 
-// Create the local Figs activity log (gitignored) so the agent logs runs/asks from day one —
-// valuable on its own, and `figs init` + `figs push` later just mirror it to the manager.
+// Create the local Figs activity log (gitignored) so the agent records runs/asks from day one —
+// valuable on its own; once connected, the CLI verbs (figs report/ask/resolve) push as they go.
 const figs = path.join(dest, ".figs")
 fs.mkdirSync(path.join(figs, "artifacts"), { recursive: true })
 for (const f of ["runs.jsonl", "asks.jsonl"]) fs.writeFileSync(path.join(figs, f), "")
