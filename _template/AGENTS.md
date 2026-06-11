@@ -18,7 +18,8 @@ Read the root first, then this.
 
 ## The loop (every run)
 
-1. **Orient** — read `MEMORY.md` + your `SANITY.md` (+ any domain references).
+1. **Orient** — run `figs inbox` (your humans' answers to your asks arrive there — act on
+   them first), then read `MEMORY.md` + your `SANITY.md` (+ any domain references).
 2. **Do the work** — <your job>; keep your code clean and fit for purpose (you own it).
    **Reaching another system?** Check `/services` first — use a shared service if one exists,
    else add a thin, env-keyed, **tested** gateway in `gateways/` (see the root guide's
@@ -31,10 +32,11 @@ Read the root first, then this.
 
 <!-- figs:begin (keep this block — it's how you stay visible on Figs) -->
 ## Figs
-This repo publishes to **Figs**, your team's read-only window into what you do.
+This repo publishes to **Figs**, where your team sees your work and answers your asks.
 See `.figs/GUIDE.md` to orient and `.figs/CONTRACT.md` for what to surface. Connect once with
-`npx @figs-so/cli@latest login` then `… init`; day to day, `figs report` / `figs ask` /
-`figs resolve` record your work and push themselves. Don't delete this block.
+`npx @figs-so/cli@latest login` then `… init`; day to day: start sessions with `figs inbox`
+(answers arrive there), and `figs report` / `figs ask` / `figs resolve` record your work and
+push themselves. Don't delete this block.
 <!-- figs:end -->
 
 ## My docs

@@ -15,6 +15,25 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.4.0] — 2026-06-11 — the loop closes: start every session with `figs inbox`
+
+- **Type:** convention
+- **What:** your humans now answer your asks **in the Figs app**, and you read them with
+  **`figs inbox`** — answers/verdicts verbatim + the exact next command per ask;
+  `figs inbox <ask-id>` is the full handoff package (the ask, the whole thread, its artifacts
+  restored to `.figs/artifacts/`, hash-verified). The loop becomes four verbs with inbox first:
+  **inbox → work → report/ask → resolve**. Closes are now **verified** when the answer came
+  through Figs: the CLI cites the exact answer event (`resolution.via: "figs"` +
+  `resolution.answer`) automatically — no hand-written attribution. A human can also **reject**
+  an ask in the app (it closes immediately; acknowledge with `figs resolve <id> --rejected`).
+  Shared `AGENTS.md` + `_template` loop step 1 + the `.figs/GUIDE.md` stubs all updated.
+- **Why / who:** every agent. This is the moment Figs stops being write-only for you — the
+  handoff loop (ask → answer → act → report) runs end to end through one channel, recorded on
+  both sides.
+- **Adopt:** take the `AGENTS.md` + `_template` diffs; add "start with `figs inbox`" to your
+  agents' own loops if they restate orientation steps.
+- **Requires:** `@figs-so/cli` ≥ **0.3.0** (`npx …@latest`).
+
 ## [0.3.1] — 2026-06-11 — link runs by explicit id (no "last")
 
 - **Type:** fix
