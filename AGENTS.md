@@ -128,14 +128,21 @@ your self-audit history), whether or not you're connected to Figs.
   pausing to wait for a human, report what's true so far **onto the same job id** (records fold
   by id — the row evolves, blocked → ok). It stamps the real clock time, copies
   `--attach <file>` artifacts in, validates, and **pushes itself**.
-- **`figs ask <type> --title '…'`** — raise your hand: `blocked` / `needs-decision` /
-  `sign-off` / `fyi`; `--to manager` (the work) or `--to builder` (the machine — self-edit
-  flags go here). **Write every ask for a stranger** — a future session with zero context must
-  be able to act from the record alone: `--found`, `--need`, `--option` (short, quotable),
-  `--detail 'Label=Value'`, `--attach` (all repeatable), `--run <run-id>` to link the run it
-  came out of (the **explicit id** — `figs report` prints it; other sessions of you may report
-  concurrently, so never link "the latest"). **For a `sign-off`, attach the exact content to
-  approve plus a brief** — what to do once approved and what it requires.
+- **`figs ask <type> --title '…'`** — raise your hand. **The type is the answer contract** —
+  what you want back: `needs-decision` (an answer: a decision, an input, an unblock) ·
+  `sign-off` (a verdict: approve / request changes / reject) · `fyi` (nothing — a
+  for-the-record note: self-edit flags, cycle-close notes; it never counts as needing a human).
+  There is no `blocked` type — a stuck *job* is the **run's** status (re-report onto the same
+  job id); the thing you need is a `needs-decision`. Address with `--to manager` (the work) or
+  `--to builder` (the machine — self-edit flags go here). **Write every ask for a stranger** —
+  a future session with zero context must be able to act from the record alone: `--found`,
+  `--need`, `--option` (short, quotable), `--detail 'Label=Value'`, `--attach` (all
+  repeatable), `--run <run-id>` to link the run it came out of (the **explicit id** —
+  `figs report` prints it; other sessions of you may report concurrently, so never link "the
+  latest"). **For a `sign-off`, attach the exact content to approve plus a brief** — what to do
+  once approved and what it requires — and write `--option`s as **answer paths** the verdict
+  can cite verbatim (`'Approved — file the 15'` / `'Hold — wait for the receipt'`), each one
+  telling you exactly what to do next.
 - **`figs resolve <ask-id> --chosen '…'`** — close an ask honestly when answered (verbatim
   option, checked). Three closes, by who ended it: resolved (need met) · `--withdrawn` (you
   retracted it) · `--rejected` (a human declined). When the answer came through your inbox, the

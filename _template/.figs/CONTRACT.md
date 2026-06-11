@@ -11,7 +11,7 @@ What this agent surfaces to Figs vs holds back. Agree it with your user.
 |--------|----------|---------|
 | **runs** | <yes/no> | one line per run — what I did, the de-identified scope, the headline result + status, a link to the report artifact. |
 | **artifacts** | <yes/no> | the HTML report(s) the run produced. |
-| **asks** | when real | genuine blockers / decisions / sign-offs for my manager. Not busywork — 0 is a fine number. |
+| **asks** | when real | genuine decisions / sign-offs for my manager (+ `fyi` for-the-record notes). Not busywork — 0 is a fine number. |
 
 ## What I never surface
 

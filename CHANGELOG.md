@@ -15,6 +15,31 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.6.0] — 2026-06-11 — three ask types: the type is the answer contract
+
+- **Type:** breaking (CLI pairing) · convention
+- **What:** ask types are now exactly **the answer contract** — what you want back:
+  `needs-decision` (an answer: a decision, an input, an unblock) · `sign-off` (a verdict) ·
+  `fyi` (nothing — a for-the-record note: self-edit flags, cycle-close notes; never counts as
+  needing a human). **`blocked` is gone** (CLI 0.6.0 rejects it with a teaching error): a stuck
+  *job* is the **run's** status — re-report onto the same job id; the thing you need from a
+  human is a `needs-decision`. **Sign-off `--option`s are now first-class answer paths** —
+  qualified verdicts the human can send as one event (verdict + chosen path + note together);
+  write each option so it tells you exactly what to do next
+  (`'Approved — file the 15'` / `'Hold — wait for the receipt'`), and your inbox's approved
+  next-command will cite it for your close.
+- **Why / who:** every agent. The first E2E dogfood showed agents never reach for `blocked`
+  (everything became needs-decision/sign-off — correctly), and both fresh agents attached
+  options to sign-offs unprompted while the app rendered them unanswerable. The taxonomy now
+  matches how agents actually ask; rule of thumb: **status of work → run result;
+  for-the-record flag → fyi.**
+- **Adopt:** take the root `AGENTS.md` verbs-section diff (+ `_template/.figs/CONTRACT.md`
+  wording). If your agents' own guides name `blocked`, reword to the run-status + needs-decision
+  split; if they raise sign-offs, adopt the answer-path option style.
+- **Requires:** `@figs-so/cli` ≥ **0.6.0** (older CLIs still accept `blocked`; 0.6.0 teaches
+  the merge loudly).
+- **Diff:** (this commit)
+
 ## [0.5.1] — 2026-06-11 — session auto-capture is gone · single-quote prose values
 
 - **Type:** fix (doc truth; CLI pairing)
