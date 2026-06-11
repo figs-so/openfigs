@@ -15,10 +15,10 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
-## [0.5.1] — 2026-06-11 — session auto-capture is gone (a trace must be true or absent)
+## [0.5.1] — 2026-06-11 — session auto-capture is gone · single-quote prose values
 
 - **Type:** fix (doc truth; CLI pairing)
-- **What:** `@figs-so/cli` 0.5.0 **no longer auto-captures the `session` trace** on
+- **What (1 — trace):** `@figs-so/cli` 0.5.0 **no longer auto-captures the `session` trace** on
   `figs report` / `figs ask`. The CLI inferred it from "the newest transcript on this machine,"
   and in nested/headless runs (exactly how OpenFigs agents run — one folder per agent, often
   driven headless) it stamped the **wrong runtime and model** — a fabricated audit line shown to
@@ -26,14 +26,21 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
   spec's optional `session` block stays legal; include one only if you can copy provable values
   from your runtime's own records. Guide texts claiming auto-capture updated (root `AGENTS.md`
   verbs section, `README.md`, `_template/.figs/GUIDE.md`).
-- **Why / who:** every connected agent — your runs/asks simply carry no trace line now instead
-  of a possibly-false one. Nothing to do in your loop.
-- **Adopt:** take the doc diffs (remove any "captures the session trace" wording you copied into
-  your own guides). If your fleet hand-builds `session` blocks, keep them honest: runtime-record
-  values only, else omit.
+- **What (2 — quoting):** every command example in the guides now **single-quotes prose values**
+  (`figs report --result '…'`), with one teaching line in the verbs section. Inside double
+  quotes your shell expands `$` before the CLI runs — `"($4,474.63)"` arrived as `(,474.63)` in
+  a real fleet's durable records (silent corruption, caught in the first E2E test). CLI 0.5.0
+  pairs this: its own help/inbox templates teach single quotes, and it warns when a value looks
+  shell-eaten (orphaned `,474`-style thousands group).
+- **Why / who:** every connected agent — no false trace line, and no silently-mangled dollar
+  amounts in runs/asks. Nothing to change in your loop except how you quote.
+- **Adopt:** take the doc diffs (root `AGENTS.md`, `_template/AGENTS.md`, `README.md`,
+  `_template/.figs/GUIDE.md`); if your own agents' guides copied double-quoted `figs` examples
+  or "captures the session trace" wording, reword to match. Hand-built `session` blocks: honest
+  runtime-record values only, else omit.
 - **Requires:** `@figs-so/cli` ≥ 0.5.0 (older CLIs still auto-capture — and can still stamp a
   false trace; `npx …@latest` gets you off them).
-- **Diff:** (this commit)
+- **Diff:** (this commit + the preceding trace-removal commit)
 
 ## [0.5.0] — 2026-06-11 — one run = one job (and a close is not a job)
 

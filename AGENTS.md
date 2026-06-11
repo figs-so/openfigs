@@ -122,27 +122,31 @@ your self-audit history), whether or not you're connected to Figs.
   thread, its artifacts restored to disk) — written for a you with zero context, so read it,
   verify any prerequisites the ask stated, act, then close with `figs resolve`.
   A rejection means a human closed it: acknowledge with `figs resolve <id> --rejected`.
-- **`figs report --result "…"`** — record every job with this. **One run = one job** — a unit
+- **`figs report --result '…'`** — record every job with this. **One run = one job** — a unit
   of work your *manager* would recognize, under a stable, meaningful `--id`
   (`recon-acme-2026-11`); the runs list is the job list. Sittings/sessions never mint runs:
   pausing to wait for a human, report what's true so far **onto the same job id** (records fold
   by id — the row evolves, blocked → ok). It stamps the real clock time, copies
   `--attach <file>` artifacts in, validates, and **pushes itself**.
-- **`figs ask <type> --title "…"`** — raise your hand: `blocked` / `needs-decision` /
+- **`figs ask <type> --title '…'`** — raise your hand: `blocked` / `needs-decision` /
   `sign-off` / `fyi`; `--to manager` (the work) or `--to builder` (the machine — self-edit
   flags go here). **Write every ask for a stranger** — a future session with zero context must
   be able to act from the record alone: `--found`, `--need`, `--option` (short, quotable),
-  `--detail "Label=Value"`, `--attach` (all repeatable), `--run <run-id>` to link the run it
+  `--detail 'Label=Value'`, `--attach` (all repeatable), `--run <run-id>` to link the run it
   came out of (the **explicit id** — `figs report` prints it; other sessions of you may report
   concurrently, so never link "the latest"). **For a `sign-off`, attach the exact content to
   approve plus a brief** — what to do once approved and what it requires.
-- **`figs resolve <ask-id> --chosen "…"`** — close an ask honestly when answered (verbatim
+- **`figs resolve <ask-id> --chosen '…'`** — close an ask honestly when answered (verbatim
   option, checked). Three closes, by who ended it: resolved (need met) · `--withdrawn` (you
   retracted it) · `--rejected` (a human declined). When the answer came through your inbox, the
   CLI **cites the exact event** (`via: "figs"` — verified attribution, automatic). **A close is
   not a job** — fork on what the answer unlocked: nothing left to do → resolve right away; real
   work → do the job, `figs report` it under its own id, *then* resolve (cite the job in
   `--note` so a reader can find the work).
+
+**Single-quote prose values** (`--result '…'`, `--title '…'`): inside double quotes your shell
+expands `$` before the CLI runs — `"($4,474.63)"` arrives as `(,474.63)`, silently corrupting
+your own record. Single quotes pass text through verbatim.
 
 Hand-writing the JSONL stays legal (the files are the protocol; `figs doctor` checks them) —
 but the verbs exist so you never type a timestamp, invent an id, or forget to push. Bare
@@ -169,7 +173,7 @@ portable file) and publish it to Figs as the run's artifact. Render it with the 
 so every report shares one house style:
 
 ```
-node <repo>/lib/report.mjs --title "…" --out reports/YYYY-MM-DD-<slug>.html --body body.html
+node <repo>/lib/report.mjs --title '…' --out reports/YYYY-MM-DD-<slug>.html --body body.html
 ```
 
 You write only the **body**, using the classes in `lib/report.css` (`.topbar` · `.lead` ·
