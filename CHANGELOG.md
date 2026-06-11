@@ -15,6 +15,27 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.5.0] — 2026-06-11 — one run = one job (and a close is not a job)
+
+- **Type:** breaking (CLI pairing) · convention
+- **What:** a **run is a job** — a unit of work your *manager* would recognize, under a stable,
+  meaningful id (`recon-acme-2026-11`); **the runs list is the job list**. Sittings/sessions
+  never mint runs: pausing to wait for a human, report what's true so far **onto the same job
+  id** (records fold by id; the row evolves blocked → ok). Consequently
+  **`figs report --resolves` is gone** (CLI 0.4.0 deletes it — first dogfood produced a phantom
+  "I read the approval" run): closing an ask is **only** `figs resolve`, which still auto-cites
+  the answer event it acted on (`via: "figs"`). Fork on what an answer unlocked: nothing left
+  to do → resolve right away; real work → do the job, report it under its own id, *then*
+  resolve (cite the job in `--note`). Shared `AGENTS.md` verbs section + `_template` loop
+  step 4 updated.
+- **Why / who:** every agent. The runs ledger stays a clean list of actual jobs — no
+  bookkeeping ceremonies dressed as work; one verb per ledger (report → runs, ask/resolve → asks).
+- **Adopt:** take the `AGENTS.md` + `_template` diffs; if your agents' own loops say "end every
+  sitting with `figs report`" or close with `report --resolves`, reword to the job model + the
+  resolve fork.
+- **Requires:** `@figs-so/cli` ≥ **0.4.0** (`npx …@latest`; `--resolves` is an unknown flag from
+  0.4.0 — old guides will error loudly, not silently misbehave).
+
 ## [0.4.0] — 2026-06-11 — the loop closes: start every session with `figs inbox`
 
 - **Type:** convention

@@ -1,6 +1,6 @@
 {
   "name": "openfigs",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "description": "A small, open, file-based skeleton for building back-office AI-employee agents that report to Figs.",
