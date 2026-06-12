@@ -116,50 +116,32 @@ your self-audit history), whether or not you're connected to Figs.
 **The verbs do the bookkeeping — your loop is four commands** (run the CLI via
 `npx @figs-so/cli@latest <cmd>`, no install; `figs <cmd>` is shorthand):
 
-- **`figs inbox`** — **start every session with this.** Your humans answer your asks in the
-  Figs app; the inbox is where you read them — answers/verdicts **verbatim** plus the exact
-  next command per ask. `figs inbox <ask-id>` is the full handoff package (the ask, the whole
-  thread, its artifacts restored to disk) — written for a you with zero context, so read it,
-  verify any prerequisites the ask stated, act, then close with `figs resolve`.
-  A rejection means a human closed it: acknowledge with `figs resolve <id> --rejected`.
-- **`figs report --result '…'`** — record every job with this. **One run = one job** — a unit
-  of work your *manager* would recognize, under a stable, meaningful `--id`
-  (`recon-acme-2026-11`); the runs list is the job list. Sittings/sessions never mint runs:
-  pausing to wait for a human, report what's true so far **onto the same job id** (records fold
-  by id — the row evolves, blocked → ok). It stamps the real clock time, copies
-  `--attach <file>` artifacts in, validates, and **pushes itself**.
-- **`figs ask <type> --title '…'`** — raise your hand. **The type is the answer contract** —
-  what you want back: `needs-decision` (an answer: a decision, an input, an unblock) ·
-  `sign-off` (a verdict: approve / request changes / reject) · `fyi` (nothing — a
-  for-the-record note: self-edit flags, cycle-close notes; it never counts as needing a human).
-  There is no `blocked` type — a stuck *job* is the **run's** status (re-report onto the same
-  job id); the thing you need is a `needs-decision`. Address with `--to manager` (the work) or
-  `--to builder` (the machine — self-edit flags go here). **Write every ask for a stranger** —
-  a future session with zero context must be able to act from the record alone: `--found`,
-  `--need`, `--option` (short, quotable), `--detail 'Label=Value'`, `--attach` (all
-  repeatable), `--run <run-id>` to link the run it came out of (the **explicit id** —
-  `figs report` prints it; other sessions of you may report concurrently, so never link "the
-  latest"). **For a `sign-off`, attach the exact content to approve plus a brief** — what to do
-  once approved and what it requires — and write `--option`s as **answer paths** the verdict
-  can cite verbatim (`'Approved — file the 15'` / `'Hold — wait for the receipt'`), each one
-  telling you exactly what to do next.
-- **`figs resolve <ask-id> --chosen '…'`** — close an ask honestly when answered (verbatim
-  option, checked). Three closes, by who ended it: resolved (need met) · `--withdrawn` (you
-  retracted it) · `--rejected` (a human declined). When the answer came through your inbox, the
-  CLI **cites the exact event** (`via: "figs"` — verified attribution, automatic). **A close is
-  not a job** — fork on what the answer unlocked: nothing left to do → resolve right away; real
-  work → do the job, `figs report` it under its own id, *then* resolve (cite the job in
-  `--note` so a reader can find the work).
+- **`figs inbox`** — **start every session with this.** Your humans' answers and verdicts
+  arrive there, **verbatim**, each with the exact next command. `figs inbox <ask-id>` is the
+  full zero-context handoff package (ask + thread + artifacts restored to disk). A rejection
+  means a human closed it — acknowledge it.
+- **`figs report --result '…'`** — record every job. **One run = one job** — a unit of work
+  your *manager* would recognize, under a stable, meaningful `--id`; sittings never mint runs —
+  re-report onto the same job id (records fold; the row evolves).
+- **`figs ask <type> --title '…'`** — raise your hand when you need a human. **The type is the
+  answer contract** — what you want back: `needs-decision` (an answer) · `sign-off` (a verdict
+  — attach the exact content to approve and **state what approval sets in motion**) · `fyi`
+  (nothing — a for-the-record note). Address with `--to manager` (the work) or `--to builder`
+  (the machine). **Every ask is read by two strangers** — a human deciding and a future session
+  acting, each from the record alone — so write it self-contained.
+- **`figs resolve <ask-id>`** — close honestly, by who ended it: resolved (need met) ·
+  `--withdrawn` (you retracted it) · `--rejected` (a human declined). Answers that came through
+  your inbox **auto-cite the exact event** (verified attribution). A close is not a job — real
+  work gets its own `figs report` first, then the close cites it.
 
-**Single-quote prose values** (`--result '…'`, `--title '…'`): inside double quotes your shell
-expands `$` before the CLI runs — `"($4,474.63)"` arrives as `(,474.63)`, silently corrupting
-your own record. Single quotes pass text through verbatim.
-
-Hand-writing the JSONL stays legal (the files are the protocol; `figs doctor` checks them) —
-but the verbs exist so you never type a timestamp, invent an id, or forget to push. Bare
-`figs push` is only for after hand-edits or `--no-push` batching. Surface aggregates +
-**de-identified labels; never raw user content** (your `CONTRACT.md` governs what you surface).
-Artifacts are **immutable once published** — a new version is a new name.
+The verbs stamp, validate, and **push themselves** — and **the CLI is the guide**: every
+command's `--help` teaches its fields' contracts at the point of use, errors teach the fix, and
+the **full conventions live at `/llms.txt` on your Figs endpoint** (the canonical guide — read
+it there; don't copy it here, copies drift). Two standing rules: **single-quote prose values**
+(`'…'` — double quotes let your shell eat `$` amounts, silently corrupting your record), and
+surface aggregates + **de-identified labels; never raw user content** (your `CONTRACT.md`
+governs what you surface). Hand-writing the JSONL stays legal (`figs doctor` checks it);
+artifacts are **immutable once published** — a new version is a new name.
 
 **Setup (once): you drive; the human only clicks in the browser.** Run `figs login`
 **yourself** (in the background — it polls + waits): it opens your user's browser to click

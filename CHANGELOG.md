@@ -15,6 +15,27 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.7.0] — 2026-06-12 — sign-offs state their consequences; the guide stops duplicating the CLI
+
+- **Type:** convention
+- **What:** two changes in the root `AGENTS.md` Figs section. (1) **A sign-off states what
+  approval sets in motion** — CLI 0.7.0 adds `--on-approve '<step>'` (repeatable, ordered,
+  sign-off only): the steps an approval authorizes, rendered to the approver right next to the
+  verdict buttons; flag anything irreversible in the step itself. The composed answer (verdict
+  + cited path + note) is **one instruction** — and a note that changes the approved content
+  itself is a change request: revise and re-raise on the same id. (2) **The section is slimmed
+  to the loop + a pointer** — field-level conventions now live only in the canonical guide
+  (`/llms.txt`) and in `figs <cmd> --help` (the CLI is the guide). Copies drift; the skeleton
+  stops carrying one.
+- **Why / who:** the 2026-06-12 sign-off-consequences decision (an approver should know exactly
+  what clicking Approve causes — otherwise sign-off is rubber-stamping); every fleet agent that
+  raises sign-offs.
+- **Adopt:** replace your root `AGENTS.md` "Report to your human (Figs)" verb bullets with the
+  new slimmed block (or hand-merge if you've customized them); teach your agents `--on-approve`
+  by pointing them at `figs ask --help` — don't paste field docs into your own guide.
+- **Requires:** CLI ≥ 0.7.0 (`--on-approve`); app deploy ≥ 2026-06-12 (renders the steps).
+- **Diff:** the commit tagged 0.7.0.
+
 ## [0.6.0] — 2026-06-11 — three ask types: the type is the answer contract
 
 - **Type:** breaking (CLI pairing) · convention
