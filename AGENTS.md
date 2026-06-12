@@ -113,16 +113,23 @@ files, decide what's worth writing down.
 durable **local record** of what you did and what needs a human: valuable on its own (it's also
 your self-audit history), whether or not you're connected to Figs.
 
-**The verbs do the bookkeeping — your loop is four commands** (run the CLI via
+**The verbs do the bookkeeping — your loop is five commands** (run the CLI via
 `npx @figs-so/cli@latest <cmd>`, no install; `figs <cmd>` is shorthand):
 
 - **`figs inbox`** — **start every session with this.** Your humans' answers and verdicts
-  arrive there, **verbatim**, each with the exact next command. `figs inbox <ask-id>` is the
-  full zero-context handoff package (ask + thread + artifacts restored to disk). A rejection
-  means a human closed it — acknowledge it.
-- **`figs report --result '…'`** — record every job. **One run = one job** — a unit of work
-  your *manager* would recognize, under a stable, meaningful `--id`; sittings never mint runs —
-  re-report onto the same job id (records fold; the row evolves).
+  arrive there, **verbatim**, each with the exact next command — plus your **unfinished jobs**
+  (in-flight runs a past session opened and never settled: your past self's work; finish or
+  settle them first). `figs inbox <ask-id>` is the full zero-context handoff package (ask +
+  thread + artifacts restored to disk). A rejection means a human closed it — acknowledge it.
+- **`figs checkpoint --id <job> --note '…'`** — **open any job that will outlive this sitting
+  before you work it** (the first checkpoint opens it, in flight), then checkpoint as you go at
+  *manager grain*. If you die mid-job, the checkpoint is what the next session finds in its
+  inbox — without one, the job never existed. State `--trigger '<what set this sitting in
+  motion>'` on a fresh sitting.
+- **`figs report --result '…'`** — record every job's outcome. **One run = one job** — a unit
+  of work your *manager* would recognize, under a stable, meaningful `--id`; sittings never
+  mint runs — re-report onto the same job id (records fold; the row evolves). A report
+  **settles** the job (a single-sitting job needs no prior checkpoint — it's born settled).
 - **`figs ask <type> --title '…'`** — raise your hand when you need a human. **The type is the
   answer contract** — what you want back: `needs-decision` (an answer) · `sign-off` (a verdict
   — attach the exact content to approve and **state what approval sets in motion**) · `fyi`

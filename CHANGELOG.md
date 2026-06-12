@@ -15,6 +15,28 @@ Entry format: **Type** (`fix` · `convention` · `skill` · `service` · `breaki
 **Why / who** · **Adopt** (how to reconcile it into a possibly-edited copy) · **Requires**
 (paired CLI/app versions, when relevant) · **Diff** (the commit).
 
+## [0.8.0] — 2026-06-12 — checkpoint-first: a job opens before it's worked
+
+- **Type:** convention
+- **What:** the loop learns the run lifecycle (CLI 0.8.0). (1) **Open any job that will
+  outlive the sitting** with `figs checkpoint --id <job> --note '<trigger + plan>'` — the
+  first checkpoint opens it (in flight); checkpoint as you go at manager grain; `figs report`
+  settles it (single-sitting jobs are unchanged — born settled, no checkpoint needed). A crash
+  mid-job now leaves a recoverable stub instead of nothing. (2) **`figs inbox` lists your
+  unfinished jobs** — a past session's in-flight work resurfaces at session start; finish or
+  settle it first. Root `AGENTS.md` verb bullets (four → five commands) + `_template/AGENTS.md`
+  loop steps 1/2/4 + the `figs:begin` block updated.
+- **Why / who:** a job that died mid-way (network, usage limit, killed session) was invisible —
+  no run, no ask, nothing for the manager or the agent's own next session to find (the
+  2026-06-12 run-lifecycle decision, HQ architecture.md). Every fleet agent with multi-sitting
+  jobs.
+- **Adopt:** merge the new loop steps into your root `AGENTS.md` + each agent's loop (or
+  hand-merge if customized); the conventions are in `figs checkpoint --help` and `/llms.txt` —
+  don't paste field docs locally.
+- **Requires:** CLI ≥ 0.8.0 (`checkpoint`, inbox jobs section); app deploy ≥ 2026-06-12
+  (run state + timeline).
+- **Diff:** the commit tagged 0.8.0.
+
 ## [0.7.0] — 2026-06-12 — sign-offs state their consequences; the guide stops duplicating the CLI
 
 - **Type:** convention
