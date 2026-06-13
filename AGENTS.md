@@ -62,7 +62,7 @@ your scope to a single clear mandate — a good employee does one thing well, no
    for *fyi / "I'm assuming X"*, not an ask. So a crash leaves a recoverable stub. Reaching another system? Go through a **gateway** (see
    *Connectors*) — keys from the env, never embedded. Keep your code clean and fit for purpose.
 3. **Record** — append what you learned to `MEMORY.md`; promote repeated work into a skill/script.
-4. **Report** — settle the job with `figs report --id <job-id> --result '…' [--attach <report>]`
+4. **Report** — settle the job with `figs report --id <job-id> --result '…' [--trigger '<why it ran>'] [--attach <report>]` (pass `--trigger` on a fresh job — your manager sees the "why" on the timeline)
    (one run = one job under a stable id; it pushes itself when linked). Raise anything that needs a
    human with `figs ask` — `question` (an answer) or `sign-off` (a verdict), written for a stranger;
    when the reply comes back, `figs answer` transcribes it and `figs close` ends the ask, citing it.

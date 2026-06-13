@@ -12,6 +12,22 @@ in `MEMORY.md`, then bump your local `version` to mark the review done.
 Entry format: **Type** (`fix` · `convention` · `skill` · `breaking`) · **What** · **Why** ·
 **Adopt** (how to reconcile into a possibly-edited copy) · **Requires** (paired CLI/app versions).
 
+## [1.1.0] — 2026-06-14 — e2e polish: naming, login, checkpoint-as-journal
+
+- **Type:** `convention` — guidance + template clarity (no structural change).
+- **What:** distilled from the 2026-06-13 dogfood run —
+  - **Name yourself human-friendly** (not the kebab repo name) — it's your org-chart display.
+  - **`figs login` is interactive / human-present** — a scheduled agent never logs in; check
+    `figs status` and skip to `figs link`. Auth is the human's job.
+  - **`checkpoint` is your work-journal** (findings, calculations, assumptions, heads-ups) — and the
+    home for *fyi / "I'm assuming X"*, not an ask. Pass **`--trigger`** so your manager sees *why* a
+    job started (it shows on the timeline, even for a one-sitting `report`).
+  - **CONTRACT** scaffold now asks *"what needs your sign-off?"*; **MEMORY** "dated notes" = decisions
+    & learnings (reference Figs jobs by id, don't reproduce them).
+  - Fixed stale `figs init --new-identity` → `rm -rf .figs && figs init` + the server name-mismatch guard.
+- **Adopt:** re-read `AGENTS.md` §"Who you are" + the Figs section; no file moves.
+- **Requires:** figs-spec v2 / CLI ≥ 1.1.0 (login short-circuit + default `to:manager`).
+
 ## [1.0.0] — 2026-06-13 — single employee, local-first (figs-spec v2 / CLI 1.0.0)
 
 - **Type:** `breaking` — a re-foundation. (The pre-1.0 fleet-in-one-repo history lives in git.)
