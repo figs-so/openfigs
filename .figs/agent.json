@@ -1,17 +1,17 @@
 {
-  "name": "Recruiter",
-  "role": "Recruits & maintains the fleet",
-  "mandate": "Keep the OpenFigs fleet healthy — maintain the roster and fleet rules, and recruit & onboard new agents.",
+  "name": "<AGENT_NAME>",
+  "role": "<one line — your title>",
   "status": "in_dev",
+  "mandate": "<one sentence — the single job you're accountable for>",
+  "avatar": { "seed": "<AGENT_NAME>" },
+  "org": { "department": "<your team / department — this groups you on the org chart>" },
   "runtime": "Claude Code",
-  "org": { "department": "Fleet" },
-  "cadence": "on-demand",
-  "responsibilities": [
-    "Recruit & onboard new agents (the `recruit` skill)",
-    "Keep the roster + fleet rules (root AGENTS.md / MEMORY.md) current",
-    "Run `self-audit` across the fleet; flag drift"
+  "cadence": "<on-demand · weekly · monthly · …>",
+  "steps": [
+    "<your fixed, ordered procedure — one step per line; or delete and use responsibilities>"
   ],
   "properties": [
-    { "k": "scope", "v": "the whole fleet; individual agents do their own jobs" }
+    { "k": "Data sources", "v": "<the systems you read, via gateways>" },
+    { "k": "Trust model", "v": "<advisory · human-signed-off>" }
   ]
 }

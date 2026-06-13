@@ -1,6 +1,6 @@
 ---
 name: self-audit
-description: Audit an agent (or the whole repo) for drift — check the global doc-rules and the agent's SANITY.md invariants, fix the safe issues, flag the rest, and log the result so health is tracked over time. Use on a schedule, or when asked to check that things are clean.
+description: Audit this agent for drift — check the doc-rules and its SANITY.md invariants, fix the safe issues, flag the rest, and log the result so health is tracked over time. Use on a schedule, or when asked to check that things are clean.
 ---
 
 # Self-audit
@@ -11,16 +11,15 @@ up / audit." This is what keeps a self-improving agent from rotting as it edits 
 code, and docs over many runs.
 
 ## Procedure
-1. **Scope it** — one block (the agent folder you're in) or the whole repo.
-2. **Run the checks** — the **fleet floor** in the root `SANITY.md` (applies to every block) +
-   this block's own `SANITY.md`.
-3. **Fix vs flag** — fix the safe, obvious things (add a missing Maintain note, add a missing
-   index line, move a stray file into its folder). Anything judgment-laden or risky:
-   **don't auto-fix — flag it.**
-4. **Track it** — append one line per audit to the block's history (`.figs/runs.jsonl` or a
-   dedicated `audit-log.jsonl`): date · checks run · issues found · issues fixed. The **trend
-   over time** is the health signal — the key to a sustainable agent.
-5. **Report** — a short summary; raise a Figs **ask** for anything that needs the human.
+1. **Run the checks** — your `SANITY.md` invariants + the doc-rules in `AGENTS.md` (every doc has
+   a "Maintain:" note and is listed in the index; symlinks intact; tidy workspace; no secrets).
+2. **Fix vs flag** — fix the safe, obvious things (add a missing Maintain note, add a missing index
+   line, move a stray file into its folder). Anything judgment-laden or risky: **don't auto-fix —
+   flag it.**
+3. **Track it** — append one line per audit to a history (`.figs/runs.jsonl` or a dedicated
+   `audit-log.jsonl`): date · checks run · issues found · issues fixed. The **trend over time** is
+   the health signal — the key to a sustainable agent.
+4. **Report** — a short summary; raise a Figs **ask** for anything that needs the human.
 
 ## Pitfalls
 - Editing `SANITY.md` itself is a flagged self-edit — never quietly weaken a check.

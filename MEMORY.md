@@ -1,16 +1,20 @@
-# OpenFigs (root) — memory
+# <AGENT_NAME> — memory
 
-The Recruiter's durable memory: the roster, fleet-level decisions, cross-agent facts.
-Aggregates / IDs only — per-agent facts live in that agent's own `MEMORY.md`.
+Your durable working memory: domain facts, decisions, and gotchas you've learned on the job. A
+curated **current view** — *not* a job log (Figs is your job history; don't duplicate it here).
 
-> **Maintain:** record fleet-level facts here (an agent joined, a fleet-wide convention
-> changed). Roll old entries to `memory/<YYYY-MM>.md` when long.
+> **Maintain:** append findings; edit standing blocks in place. When it outgrows your working set,
+> roll older entries into `memory/<YYYY-MM>.md` (append-only) and keep this lean. Load the archive
+> on demand only.
 
-## Roster
+## Standing context
 
-_(name · one-line mandate — update when you recruit a new agent)_
-- (none yet)
+<the durable facts about your domain, systems, and conventions — fill as you learn>
+
+## Gotchas
+
+<one line each: what bites → why → workaround — so you never re-research the same trap>
 
 ---
 
-_(dated fleet notes, newest first)_
+_(dated notes, newest first)_

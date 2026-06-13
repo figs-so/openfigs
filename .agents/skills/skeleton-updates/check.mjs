@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * Skeleton drift check — compares this fleet's reviewed skeleton revision
- * (`version` in the root package.json) against upstream figs-so/openfigs and
- * prints any CHANGELOG entries not yet reviewed here.
+ * Skeleton drift check — compares this agent's reviewed skeleton revision
+ * (`version` in package.json) against upstream figs-so/openfigs and prints any
+ * CHANGELOG entries not yet reviewed here.
  *
  * Advisory only: always exits 0, says one quiet line when offline. Zero-dep,
  * Node ≥ 18. The repo root is resolved from this file's own location, so it
- * runs correctly from any folder in the fleet.
+ * runs correctly from any subfolder.
  */
 import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"

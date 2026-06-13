@@ -1,6 +1,6 @@
 name: CI
 
-# Runs on every push + PR: shared services must stay tested, and the runtime symlinks
+# Runs on every push + PR: any tests must stay green, and the runtime symlink
 # (CLAUDE.md -> AGENTS.md, .claude/skills -> .agents/skills) must stay intact.
 
 on:
@@ -25,5 +25,5 @@ jobs:
       - name: Symlinks intact
         run: node scripts/fix-symlinks.mjs --check
 
-      - name: Test shared services
+      - name: Test
         run: npm test

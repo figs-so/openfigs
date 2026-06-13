@@ -3,9 +3,11 @@
 .env.local
 **/.figs/credentials.json
 
-# Figs outbox — transient; pushed to Figs, aggregated remotely, not source history
+# Figs journal — machine-local; pushed to Figs, aggregated remotely, not source history.
+# (config.json — your committed identity — and agent.json / CONTRACT.md are NOT ignored.)
 **/.figs/runs.jsonl
 **/.figs/asks.jsonl
+**/.figs/messages.jsonl
 **/.figs/artifacts/
 
 # Per-user local runtime settings (not shared)
