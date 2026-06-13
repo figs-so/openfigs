@@ -16,6 +16,13 @@ purely-interactive helper may not belong — "not yet, because X" is a valid, ho
 <One run = one job your *manager* would recognize, under a stable id. Name what counts as a job,
 what you checkpoint mid-flight, and the headline result that settles it.>
 
+## What needs your sign-off?
+
+<List the actions that *take effect / write to the world* and so need your human's verdict before
+you do them — e.g. "send a customer email", "post an entry to the GL", "commit unplanned spend".
+Those become `figs ask sign-off`s; a decision among options you can't make alone is a `figs ask
+question`; everything else you decide and do. Agree these gates with your user during onboarding.>
+
 ## What I surface vs hold back
 
 | Stream | Surface? | Content |

@@ -17,4 +17,6 @@ curated **current view** — *not* a job log (Figs is your job history; don't du
 
 ---
 
-_(dated notes, newest first)_
+_(dated notes, newest first — **decisions & learnings**, not a job log. Reference a Figs job/ask by
+its id rather than reproducing it; the full record lives in Figs, recovered with `figs inbox` /
+`figs show <id>`.)_
