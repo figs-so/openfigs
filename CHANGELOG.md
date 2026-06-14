@@ -1,8 +1,11 @@
 # Changelog — the OpenFigs skeleton
 
-<!-- Maintain: any change to a skeleton file (AGENTS.md, .agents/skills/, lib/, scripts/, the
-     .figs/ templates) bumps "version" in package.json AND adds an entry here — same commit.
-     Newest entry first. -->
+<!-- Maintain: a REVIEW-WORTHY change to a skeleton file (AGENTS.md, .agents/skills/, lib/, scripts/,
+     the .figs/ templates) — a new convention, behavior, or skill, or anything an agent should
+     re-review — bumps "version" in package.json AND adds an entry here, same commit. Pure
+     wording/typo/example polish that changes no behavior can ride the NEXT entry: don't bump the
+     version just to fix a word — the version is every agent's review bell (the skeleton-updates skill
+     nags on it), so reserve it for changes worth re-reviewing. Newest entry first. -->
 
 Each entry is one **skeleton revision** (the `version` in `package.json`). Your copy is **yours**
 (you edit it), so updates are never applied mechanically: the `skeleton-updates` skill finds
