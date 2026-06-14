@@ -4,7 +4,7 @@ How this agent uses Figs: what it surfaces, what it holds back, and on what cade
 your user** before publishing real activity — it's a standing decision, not a mechanical one.
 
 > **Maintain:** edit when the surfacing agreement changes (a new stream, a sensitivity change, a
-> different cadence). Keep it honest to what you actually push. Full guide: https://app.figs.so/llms.txt
+> different cadence). Keep it honest to what you actually push. Full guide: https://figs.so/llms.txt
 
 ## Am I a good fit?
 

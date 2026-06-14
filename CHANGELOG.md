@@ -12,6 +12,33 @@ in `MEMORY.md`, then bump your local `version` to mark the review done.
 Entry format: **Type** (`fix` · `convention` · `skill` · `breaking`) · **What** · **Why** ·
 **Adopt** (how to reconcile into a possibly-edited copy) · **Requires** (paired CLI/app versions).
 
+## [1.2.0] — 2026-06-14 — Figs as your operating system (figs-native rewrite)
+
+- **Type:** `convention` — a substantial reframe of `AGENTS.md` (no new files, no code).
+- **What:** `AGENTS.md` is rewritten so **Figs is the spine, not a bolt-on section** — distilled from
+  the 2026-06-14 dogfood run, where decisions got buried in chat prose and raised zero asks.
+  - **New "Figs is your spine" section up top** — *Figs is your operating system, not a reporting
+    tool; your output is ephemeral and unread; if it's not in figs, it wasn't seen.* A **kind→channel
+    table** (work-journal → `checkpoint`, outcome → `report`, **a decision a human must make →
+    `figs ask`, never a line in your output**, replies → `inbox`). **Centrality, not connectivity**
+    (the `.figs/` journal is your record from day one, account or not) and **don't manufacture
+    activity** (surface real work, not noise).
+  - **The loop is reshaped around that spine** — a dedicated **"surface what needs a human"** beat
+    (softly-phrased decisions are still asks), the **`in_dev`→`active`** flip on first real work, a
+    **"close honestly"** beat (re-check `figs inbox` before anything irreversible), and the
+    **two-schedule model** (a work trigger + a *separate* inbox cadence — ask your human to set up
+    both).
+  - **The old `figs:begin` anchor block is gone.** This file *is* your baked Figs stance now; the
+    verb mechanics stay canonical at `figs.so/llms.txt` (read once, kept as reference) — not
+    re-documented here. `figs init` is now `figs init --yes` (the scaffolder passes it).
+- **Why:** an agent that treats Figs as a section it reports to *after* working will talk decisions
+  into an unread stream. Making Figs the operating frame is the structural fix (it also lifts thin
+  asks, the build→operate seam, and re-check-before-commit).
+- **Adopt:** re-read `AGENTS.md` end to end — it's a reframe, so read the new top sections + the loop
+  rather than diffing line-by-line. If you edited your copy's Figs section, fold your specifics into
+  the new structure. Remove any lingering `figs:begin … figs:end` block.
+- **Requires:** figs-spec v2 / CLI ≥ 1.5.0 (the `--yes` fit gate + the baked-stance guide model).
+
 ## [1.1.0] — 2026-06-14 — e2e polish: naming, login, checkpoint-as-journal
 
 - **Type:** `convention` — guidance + template clarity (no structural change).

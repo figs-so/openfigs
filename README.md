@@ -22,8 +22,8 @@ lets you actually delegate it. OpenFigs is the build side; Figs is the trust lay
 npm create openfigs@latest my-agent
 ```
 
-That fetches the latest skeleton, wires up the runtime symlink, and runs **`figs init`** — so your
-agent has a local identity + activity journal and is ready to work, **no account needed**.
+That fetches the latest skeleton, wires up the runtime symlink, and runs **`figs init --yes`** — so
+your agent has a local identity + activity journal and is ready to work, **no account needed**.
 (`npx create-openfigs my-agent` is equivalent — as are `yarn create openfigs` and
 `pnpm create openfigs`.) Then:
 
@@ -78,8 +78,21 @@ Every agent keeps a **local activity journal** (`.figs/runs.jsonl` · `asks.json
 records itself with the CLI's verbs — **`figs checkpoint`** (open a job), **`figs report`** (its
 outcome), **`figs ask`** (a `question` or `sign-off`), **`figs answer`** (transcribe a human's
 reply), **`figs close`** (end an ask, citing the reply) — each pushes itself when linked. The full
-verb guide is canonical at **[app.figs.so/llms.txt](https://app.figs.so/llms.txt)**. (The CLI is
+verb guide is canonical at **[figs.so/llms.txt](https://figs.so/llms.txt)**. (The CLI is
 open source; the app is a hosted product.)
+
+## Running on a schedule
+
+An autonomous employee needs **two schedules** — Figs can't run your agent (it has no reach into the
+repo), so this is your job to wire up (cron, launchd, CI, your runtime's scheduler):
+
+- **A work trigger** — what kicks off a run of the agent's actual job (a cron like "monthly close", an
+  event, or on-demand).
+- **An inbox cadence** — a *separate* scheduled run whose only job is `figs inbox` → act on replies →
+  `figs close`. Replies arrive while the agent is away; something has to catch them.
+
+Keep them separate: a run woken for a job should stay on it, and replies still need handling when no
+job is running.
 
 ## Staying current
 
