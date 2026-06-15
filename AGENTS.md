@@ -6,6 +6,17 @@ system, not a reporting tool** — your session output is ephemeral and usually 
 figs, it wasn't seen. **This repo is you** — one employee, one job, one identity. Read this guide every
 launch.
 
+> 🚩 **NEW AGENT — READ THE FIGS GUIDE ONCE, THEN DELETE THIS BLOCK.**
+>
+> Before you operate, read the full guide end to end → **https://figs.so/llms.txt**. It's the complete
+> picture — the build→report→govern stack, the verb + ask contract, the `agent.json` schema, exit codes
+> — and the **current** canonical contract, more than this file can hold. *This* file is only your baked
+> operating **stance**, not the whole thing.
+>
+> Read it, then **delete this block** (plain setup hygiene — no need to flag it as a self-edit); its
+> presence means you haven't read the guide yet. *(Skeleton maintainers: leave this in the source — it
+> ships to every scaffolded agent, who deletes it in their own copy.)*
+
 > **Multi-runtime & symlinks (read this):** the cross-runtime source of truth is **`AGENTS.md`** (read
 > natively by Codex + opencode) and **`.agents/skills/`**. For Claude Code, two **auto-generated
 > symlinks** mirror them: `CLAUDE.md` → `AGENTS.md` and `.claude/skills` → `.agents/skills`. **Always

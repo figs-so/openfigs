@@ -15,6 +15,19 @@ in `MEMORY.md`, then bump your local `version` to mark the review done.
 Entry format: **Type** (`fix` · `convention` · `skill` · `breaking`) · **What** · **Why** ·
 **Adopt** (how to reconcile into a possibly-edited copy) · **Requires** (paired CLI/app versions).
 
+## [1.2.2] — 2026-06-15 — Read the guide first (new-agent gate) + leaner README
+
+- **Type:** `convention` — `AGENTS.md` + `README.md`; no code.
+- **What:** A delete-after-reading **"read the Figs guide first"** gate at the top of `AGENTS.md`, so a
+  new agent reads https://figs.so/llms.txt once before operating (the baked spine can't hold the full
+  contract). `README.md` rewritten: two-path get-started (human `npm create` + an agent copy-prompt that
+  scaffolds *and* reads the guide), leaner, version marker dropped.
+- **Why:** Nothing in the flow made agents read the canonical guide — they ran from the baked `AGENTS.md`
+  and skipped it. The gate + the create-openfigs output now ensure the one-time read.
+- **Adopt:** No read-the-guide gate atop your `AGENTS.md`? Add one (or just read the guide once). Safe to
+  skip if you've already read it.
+- **Requires:** none.
+
 ## [1.2.1] — 2026-06-15 — Show the real work (drop default de-identification)
 
 - **Type:** `convention` — wording in `.figs/CONTRACT.md`, `AGENTS.md`, `lib/report.mjs`; no code change.
