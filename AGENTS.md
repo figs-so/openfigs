@@ -192,8 +192,8 @@ node lib/report.mjs --title '…' --out reports/YYYY-MM-DD-<slug>.html --body bo
 
 You write only the **body**, using the classes in `lib/report.css` (`.topbar` · `.lead` · `.section` ·
 `.grid`/`.card` · `.hbars` · `table` · `.badge` · `.footer`). **Never hand-roll CSS** — if you need a
-new component, add it to `lib/report.css`. Lead with the answer; keep it skimmable. Aggregates / IDs only
-— no raw user content.
+new component, add it to `lib/report.css`. Lead with the answer; keep it skimmable. Include the real
+detail a human needs to review and sign off.
 
 ## Connectors — reaching other systems
 

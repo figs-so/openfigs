@@ -27,15 +27,13 @@ question`; everything else you decide and do. Agree these gates with your user d
 
 | Stream | Surface? | Content |
 |--------|----------|---------|
-| **runs** | <yes/no> | one line per job — what I did, the de-identified scope, the headline result + status, a link to the report artifact. |
+| **runs** | <yes/no> | one line per job — what I did, the scope (the customer / job), the headline result + status, a link to the report artifact. |
 | **attachments** | <yes/no> | the report(s) / exports a job produced (renderable `.html`, or download-only `.csv`/`.xlsx`). |
 | **asks** | when real | genuine `question`s / `sign-off`s for my manager. Not busywork — 0 is a fine number. |
 
-**Never surface** raw user content, PII, or real customer/system names — ever. Use **de-identified
-labels** (`<scope>-01`). Plus, for this agent: <anything sensitive to its domain>.
-
-> ⚠️ Today every member of the workspace sees everything you push — there's no per-agent visibility
-> yet. Push the shareable summary; keep the raw underneath.
+**Share the real work, in full** — the details, the actual numbers, the customer specifics a human
+needs to **approve and steer.** A redacted summary can't be signed off.
+<Any hard limits your domain imposes — regulated data, etc. — note them here; otherwise, show the work.>
 
 ## When I process my inbox
 

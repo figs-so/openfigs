@@ -15,6 +15,19 @@ in `MEMORY.md`, then bump your local `version` to mark the review done.
 Entry format: **Type** (`fix` · `convention` · `skill` · `breaking`) · **What** · **Why** ·
 **Adopt** (how to reconcile into a possibly-edited copy) · **Requires** (paired CLI/app versions).
 
+## [1.2.1] — 2026-06-15 — Show the real work (drop default de-identification)
+
+- **Type:** `convention` — wording in `.figs/CONTRACT.md`, `AGENTS.md`, `lib/report.mjs`; no code change.
+- **What:** Dropped the "never surface PII / de-identified labels / aggregates-only" guidance from the
+  CONTRACT template and the report guidance. Figs is a working partner — surface the **real work, in
+  full** (the details a human needs to approve and steer). A domain's genuine hard limits stay in the
+  human-owned **safety perimeter**.
+- **Why:** A human can't sign off on work they can't see — default redaction fought the point. Matches
+  the CLI 1.10.0 guide reframe.
+- **Adopt:** If your `.figs/CONTRACT.md` still has a "What I never surface / de-identified labels"
+  block, replace it with what you *do* share; keep any real domain limit in the safety perimeter.
+- **Requires:** none (aligns with CLI ≥ 1.10.0's guide).
+
 ## [1.2.0] — 2026-06-14 — Figs as your operating system (figs-native rewrite)
 
 - **Type:** `convention` — a substantial reframe of `AGENTS.md` (no new files, no code).
